@@ -159,10 +159,73 @@ label.ck span{font-weight:400;font-size:.9rem;line-height:1.5}
 .frow p{font-weight:400;font-size:.8rem;line-height:1.45;flex:1}
 .fbadge{border-radius:999px;padding:3px 10px;font-weight:700;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .fbadge.on{background:#e5f8e9;color:#1f7a38}.fbadge.off{background:#fdeceb;color:var(--rojo)}.fbadge.warn{background:#fdf7d9;color:#a08c00}
+/* ---------- BIENVENIDA ---------- */
+#welcome{position:fixed;inset:0;z-index:50;background:linear-gradient(150deg,var(--rojo),#b3221c);color:#fff;
+  display:flex;align-items:flex-start;justify-content:center;padding:5vh 5vw;overflow-y:auto;
+  transition:opacity .5s ease,visibility .5s}
+#welcome.hide{opacity:0;visibility:hidden;pointer-events:none}
+.wk{max-width:640px;width:100%;text-align:center;margin:auto}
+.wk h2{font-weight:800;text-transform:uppercase;font-size:clamp(1.35rem,4vw,2.2rem);line-height:1.12;margin:8px 0 4px}
+.wk .subw{font-weight:300;font-style:italic;font-size:clamp(.78rem,1.6vw,.95rem);opacity:.92}
+.wk-kick{font-weight:600;font-style:italic;letter-spacing:.25em;text-transform:uppercase;
+  font-size:clamp(.55rem,1vw,.66rem);color:var(--amarillo);margin:22px 0 10px}
+.wk-list{display:flex;flex-direction:column;gap:8px;max-width:500px;margin:0 auto;text-align:left}
+.wk-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:10px 14px;opacity:0;transform:translateX(-16px);animation:wkin .5s ease forwards}
+.wk-item .bx{width:22px;height:22px;min-width:22px;border-radius:6px;border:2px solid rgba(255,255,255,.65);overflow:hidden}
+.wk-item .bx b{opacity:0;transform:scale(.3);background:var(--amarillo);color:var(--indigo);width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;font-size:.68rem;
+  animation:wkck .35s cubic-bezier(.2,.9,.3,1.4) forwards;animation-delay:inherit}
+.wk-item p{font-weight:400;font-size:clamp(.72rem,1.5vw,.86rem);line-height:1.35}
+@keyframes wkin{to{opacity:1;transform:none}}
+@keyframes wkck{to{opacity:1;transform:scale(1)}}
+.wk-route{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center}
+.wk-route .chip{border-color:rgba(255,255,255,.6);opacity:0;animation:wkin .4s ease forwards}
+.wk-route .arr{opacity:0;animation:wkin .4s ease forwards}
+.wk-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 10px;
+  opacity:0;animation:wkin .5s ease forwards;animation-delay:4.6s}
+.wk-cta button{border:none;border-radius:999px;padding:13px 26px;font-weight:700;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.wk-cta .wprimary{background:#fff;color:var(--rojo)} .wk-cta .wprimary:hover{background:var(--amarillo);color:var(--indigo)}
+.wk-cta .wghost{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.wk-cta .wghost:hover{background:rgba(255,255,255,.28)}
+@media (prefers-reduced-motion:reduce){.wk-item,.wk-route .chip,.wk-route .arr,.wk-cta,.wk-item .bx b{animation-duration:.01s;animation-delay:0s!important}}
 footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8ba5}
 </style>
 </head>
 <body>
+<div id="welcome">
+  <div class="wk">
+    <div class="badge" style="animation:pp .6s cubic-bezier(.2,.9,.3,1.2) both"><div class="t1">Clubes TED-Ed</div><div class="t2">Argentina</div></div>
+    <h2>BIENVENIDOS AL LANZAMIENTO<br>DEL <span class="y">CRM</span></h2>
+    <div class="subw">Reunión de lanzamiento · 27/7/26 · Fundación IQT</div>
+    <div class="wk-kick">Check-in · La agenda de hoy</div>
+    <div class="wk-list">
+      <div class="wk-item" style="animation-delay:.4s"><div class="bx"><b style="animation-delay:.8s">✓</b></div><p>👋 <b>Bienvenida:</b> por qué un CRM para Clubes</p></div>
+      <div class="wk-item" style="animation-delay:.8s"><div class="bx"><b style="animation-delay:1.2s">✓</b></div><p>▶️ <b>Video:</b> introducción al sistema en 2 minutos</p></div>
+      <div class="wk-item" style="animation-delay:1.2s"><div class="bx"><b style="animation-delay:1.6s">✓</b></div><p>🧭 <b>Recorrido en vivo:</b> las tablas, una por una</p></div>
+      <div class="wk-item" style="animation-delay:1.6s"><div class="bx"><b style="animation-delay:2s">✓</b></div><p>🗺️ <b>Arquitectura:</b> cómo fluye la información</p></div>
+      <div class="wk-item" style="animation-delay:2s"><div class="bx"><b style="animation-delay:2.4s">✓</b></div><p>💬 <b>Feedback:</b> formulario, votos y plazos</p></div>
+      <div class="wk-item" style="animation-delay:2.4s"><div class="bx"><b style="animation-delay:2.8s">✓</b></div><p>🗓️ <b>Próximos pasos:</b> dos semanas de mejoras · nos reencontramos la semana del 10/8</p></div>
+    </div>
+    <div class="wk-kick">El recorrido del sistema</div>
+    <div class="wk-route">
+      <div class="chip" style="animation-delay:2.9s">🏠 Home</div><span class="arr" style="animation-delay:3s">→</span>
+      <div class="chip" style="animation-delay:3.1s">📍 Instituciones</div><span class="arr" style="animation-delay:3.2s">→</span>
+      <div class="chip" style="animation-delay:3.3s">🎫 Licencias</div><span class="arr" style="animation-delay:3.4s">→</span>
+      <div class="chip" style="animation-delay:3.5s">🧑‍🏫 Facilitadores</div><span class="arr" style="animation-delay:3.6s">→</span>
+      <div class="chip" style="animation-delay:3.7s">🎬 Videos</div><span class="arr" style="animation-delay:3.8s">→</span>
+      <div class="chip" style="animation-delay:3.9s">🗓️ Eventos</div><span class="arr" style="animation-delay:4s">→</span>
+      <div class="chip" style="animation-delay:4.1s">✅ Asistencias</div><span class="arr" style="animation-delay:4.2s">→</span>
+      <div class="chip" style="animation-delay:4.3s">📊 Reportes</div><span class="arr" style="animation-delay:4.4s">→</span>
+      <div class="chip" style="animation-delay:4.5s">📖 Diccionario</div>
+    </div>
+    <div class="wk-cta">
+      <button class="wprimary" onclick="wStart('video')">▶ Empezar por el video</button>
+      <button class="wghost" onclick="wStart('home')">Entrar a la academia</button>
+    </div>
+  </div>
+</div>
 <header>
   <div class="lockrow">
     <div class="lockup"><div class="sq">CLUBES TED-Ed</div><span>Argentina</span></div>
@@ -540,8 +603,10 @@ function goView(v){
   if(v==='video'){vResume();}else{vPause();}
 }
 tabs.forEach(b=>b.onclick=()=>goView(b.dataset.v));
+const welcome=document.getElementById('welcome');
+function wStart(v){welcome.classList.add('hide');goView(v);}
 const h0=location.hash.slice(1);
-if(h0&&h0!=='home'&&document.getElementById('view-'+h0))goView(h0);
+if(h0&&document.getElementById('view-'+h0)){welcome.style.display='none';if(h0!=='home')goView(h0);}
 
 /* ---------- tutoriales ---------- */
 document.querySelectorAll('section[id^="view-t"]').forEach(sec=>{

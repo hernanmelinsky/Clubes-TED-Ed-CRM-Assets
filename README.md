@@ -8,7 +8,8 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 
 | Asset | Archivo | URL |
 |---|---|---|
-| 🎓 **Academia CRM** (todo-en-uno: video intro de 12 escenas + 4 tutoriales interactivos) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| 🎓 **Academia CRM** (todo-en-uno: bienvenida animada + video intro de 12 escenas + 4 tutoriales interactivos + arquitectura) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| 🗺️ Pestaña Arquitectura del sistema (BPMN, tablas, flujos F1–F8) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
 | ▶️ Video intro standalone (pantalla completa, para proyectar o grabar) | `intro-clubes-ted-ed-crm.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/intro-clubes-ted-ed-crm.html |
 | 📚 Índice de tutoriales standalone | `tutoriales-index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutoriales-index.html |
 | 📍 Tutorial 1 · Básicos de monday en Instituciones | `tutorial-1-basicos-instituciones.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-1-basicos-instituciones.html |
@@ -31,6 +32,8 @@ En [`diagramas/`](diagramas/):
 1. En el dashboard o Home del workspace: **Agregar widget → "Insertar todo" (Embed Everything)**.
 2. Pegá la URL del asset (por ejemplo la Academia: `https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/`).
 3. Listo — el contenido queda navegable dentro de monday.
+
+**Deep-links de la Academia:** `#video`, `#t1`…`#t4` y `#arq` abren directo esa pestaña (saltean la ventana de bienvenida). Útil para embeber una sección puntual como widget propio.
 
 ## Cómo agregar un asset nuevo
 
