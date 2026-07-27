@@ -133,6 +133,32 @@ label.ck span{font-weight:400;font-size:.9rem;line-height:1.5}
 .opt.bad{background:#fdeceb;border-color:var(--rojo)}
 .doneb{display:none;background:var(--indigo);color:#fff;border-radius:14px;padding:18px;text-align:center;margin-top:14px}
 .doneb b{color:var(--amarillo);text-transform:uppercase}
+/* ---------- ARQUITECTURA ---------- */
+.acard{background:#fff;border-radius:18px;box-shadow:0 8px 28px rgba(42,39,101,.1);padding:22px;margin-bottom:16px}
+.acard h3{font-weight:700;text-transform:uppercase;font-size:clamp(.95rem,1.9vw,1.15rem);margin-bottom:10px}
+.acard img{width:100%;height:auto;border-radius:10px;border:1px solid #e4e4ee;background:#fff}
+.alinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.alinks a{background:var(--indigo);color:#fff;border-radius:999px;padding:8px 18px;font-weight:600;
+  font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:.2s}
+.alinks a:hover{background:var(--rojo)}
+.lanes{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:6px 0 2px}
+.lane{flex:1;min-width:150px;border-radius:12px;padding:12px;color:#fff;background:var(--indigo)}
+.lane h4{font-weight:700;text-transform:uppercase;font-size:.66rem;letter-spacing:.06em}
+.lane p{font-weight:300;font-size:.7rem;line-height:1.45;margin-top:4px}
+.lane.l1{background:var(--teal)}.lane.l2{background:var(--azul)}.lane.l3{background:var(--rojo)}
+.lane.l4{background:var(--indigo)}.lane.l5{background:var(--celeste)}
+.larr{align-self:center;color:var(--indigo);font-weight:800}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.tcard{background:#f4f4f8;border-radius:12px;padding:12px;border-top:4px solid var(--indigo)}
+.tcard h4{font-weight:700;text-transform:uppercase;font-size:.68rem}
+.tcard .tn{font-weight:800;font-size:1.05rem;color:var(--rojo)}
+.tcard p{font-weight:300;font-size:.68rem;line-height:1.45;margin-top:2px}
+.frow{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #ececf4}
+.frow:last-child{border-bottom:none}
+.frow .fid{background:var(--indigo);color:#fff;font-weight:800;border-radius:8px;padding:4px 9px;font-size:.66rem;min-width:34px;text-align:center}
+.frow p{font-weight:400;font-size:.8rem;line-height:1.45;flex:1}
+.fbadge{border-radius:999px;padding:3px 10px;font-weight:700;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.fbadge.on{background:#e5f8e9;color:#1f7a38}.fbadge.off{background:#fdeceb;color:var(--rojo)}.fbadge.warn{background:#fdf7d9;color:#a08c00}
 footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8ba5}
 </style>
 </head>
@@ -151,6 +177,7 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <button data-v="t2">🎫 2 · Licencias</button>
     <button data-v="t3">🧑‍🏫 3 · Facilitadores</button>
     <button data-v="t4">💬 4 · Feedback</button>
+    <button data-v="arq">🗺️ Arquitectura</button>
   </nav>
 </header>
 <main>
@@ -175,6 +202,8 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
       <h3>3 · Facilitadores Únicos</h3><p>DNI vs idFac, subitems y la historia de cada persona.</p><span class="go">Empezar → 6 min</span></button>
     <button class="hcard" style="--c:var(--teal)" onclick="goView('t4')"><div class="ic">💬</div>
       <h3>4 · Cómo dar feedback</h3><p>Formulario, tabla de propuestas, votos y plazos.</p><span class="go">Empezar → 4 min</span></button>
+    <button class="hcard" style="--c:var(--azul)" onclick="goView('arq')"><div class="ic">🗺️</div>
+      <h3>Arquitectura del sistema</h3><p>El diagrama BPMN: tablas, flujos de Make e integraciones.</p><span class="go">Ver → 3 min</span></button>
   </div>
 </section>
 
@@ -439,6 +468,64 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <div class="doneb" data-need="2">🎉 <b>¡Completaste todos los tutoriales!</b><br>Ya estás en condiciones de usar el CRM. Nos vemos la semana del 10/8.</div></div>
 </section>
 
+<!-- ================= ARQUITECTURA ================= -->
+<section class="view" id="view-arq">
+  <div class="tut-title">🗺️ ARQUITECTURA DEL SISTEMA</div>
+  <div class="tut-meta">Cómo fluye la información de Educabot al CRM · estado al 27/7/26</div>
+  <div class="acard">
+    <h3>DIAGRAMA BPMN</h3>
+    <a href="diagramas/bpmn_crm.svg" target="_blank" rel="noopener"><img src="diagramas/bpmn_crm.svg" alt="Diagrama BPMN de la arquitectura del CRM: Educabot → Carga Inicial → Make F1-F8 → Índices CRM → Comunicación" loading="lazy"></a>
+    <div class="alinks">
+      <a href="diagramas/bpmn_crm.svg" target="_blank" rel="noopener">Abrir en grande</a>
+      <a href="diagramas/bpmn_crm.png" target="_blank" rel="noopener">Descargar PNG</a>
+      <a href="https://app.diagrams.net/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhernanmelinsky%2FClubes-TED-Ed-CRM-Assets%2Fmain%2Fdiagramas%2Farquitectura-crm-bpmn.drawio" target="_blank" rel="noopener">Editar en diagrams.net</a>
+    </div>
+  </div>
+  <div class="acard">
+    <h3>EL CAMINO DEL DATO</h3>
+    <div class="lanes">
+      <div class="lane l1"><h4>🎓 Educabot</h4><p>Fuente de verdad: altas y ediciones del programa.</p></div>
+      <div class="larr">→</div>
+      <div class="lane l2"><h4>📥 Carga Inicial</h4><p>Staging: instituciones, licencias (slots facilitador 1-10), facilitadores y videos.</p></div>
+      <div class="larr">→</div>
+      <div class="lane l3"><h4>⚙️ Make F1–F8</h4><p>Upsert automático con gateways: «¿institución nueva?» SÍ → crear + geocodificar · NO → actualizar.</p></div>
+      <div class="larr">→</div>
+      <div class="lane l4"><h4>🗂️ Índices CRM</h4><p>Las tablas core del workspace, vinculadas entre sí.</p></div>
+      <div class="larr">→</div>
+      <div class="lane l5"><h4>✉️ Comunicación</h4><p>Mail de seguimiento + Calendar de Clubes (eventos).</p></div>
+    </div>
+  </div>
+  <div class="acard">
+    <h3>LAS TABLAS DEL CRM</h3>
+    <div class="tgrid">
+      <div class="tcard"><h4>📍 Instituciones</h4><div class="tn">1.741</div><p>Escuelas geocodificadas, con mapa.</p></div>
+      <div class="tcard"><h4>🎫 Licencias</h4><div class="tn">6.197</div><p>Un club por ciclo, 2022–2026.</p></div>
+      <div class="tcard"><h4>👤 ID Facilitadores x Ciclo</h4><div class="tn">5.051</div><p>Índice: una fila por idFac.</p></div>
+      <div class="tcard"><h4>🧑‍🏫 Facilitadores Únicos</h4><div class="tn">4.692</div><p>Una fila por DNI · 10.422 subitems (inscripciones).</p></div>
+      <div class="tcard"><h4>🎬 Videos YouTube</h4><div class="tn">4.354</div><p>Charlas de los clubes.</p></div>
+      <div class="tcard"><h4>🗓️ Eventos y Capacitaciones</h4><div class="tn">25</div><p>Encuentros y formaciones.</p></div>
+      <div class="tcard"><h4>✅ Asistencias</h4><div class="tn">2.089</div><p>Participación por persona y evento.</p></div>
+    </div>
+  </div>
+  <div class="acard">
+    <h3>LOS 8 FLUJOS DE MAKE</h3>
+    <div class="frow"><div class="fid">F1</div><p><b>Instituciones → índice.</b> Upsert con gateway «¿institución nueva?»: crea con geocodificación o actualiza.</p><span class="fbadge on">Activo</span></div>
+    <div class="frow"><div class="fid">F2</div><p><b>Licencias → índice.</b> Upsert por ID de Educabot.</p><span class="fbadge on">Activo</span></div>
+    <div class="frow"><div class="fid">F3</div><p><b>Facilitadores x Ciclo.</b> Routers A/B/C: upsert por idFac y por DNI contra el índice y el maestro.</p><span class="fbadge warn">Activo · con errores</span></div>
+    <div class="frow"><div class="fid">F4</div><p><b>Videos YouTube → índice.</b></p><span class="fbadge off">Inactivo</span></div>
+    <div class="frow"><div class="fid">F5</div><p><b>Conectar Licencia ⇄ Institución.</b> Completa la vinculación entre tablas.</p><span class="fbadge off">Inactivo</span></div>
+    <div class="frow"><div class="fid">F6</div><p><b>Maestro + subitems.</b> Crea una inscripción (subitem) por licencia y asigna el rol Referente / Co-Facilitador.</p><span class="fbadge on">Activo</span></div>
+    <div class="frow"><div class="fid">F7</div><p><b>Conectar Video ⇄ Licencia.</b></p><span class="fbadge off">Inactivo</span></div>
+    <div class="frow"><div class="fid">F8</div><p><b>Sweep diario 07:30.</b> Repara conexiones pendientes vía GraphQL.</p><span class="fbadge off">Inactivo</span></div>
+    <div class="tip" style="margin-top:14px"><div class="tag">💡 Versión viva</div><p>Los estados y errores en tiempo real están en el doc «🗺️ Arquitectura CRM» del Home del workspace en monday.</p></div>
+  </div>
+  <div class="acard">
+    <h3>INTEGRACIONES</h3>
+    <div class="frow"><div class="fid">✉️</div><p><b>Mail del CRM.</b> Convocatorias, onboarding y seguimiento a facilitadores, integrado a monday (Gmail).</p></div>
+    <div class="frow"><div class="fid">📅</div><p><b>Calendar de Clubes.</b> Agenda de eventos y capacitaciones (GMT-3), conectada a la tabla Eventos.</p></div>
+  </div>
+</section>
+
 </main>
 <footer>Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</footer>
 
@@ -449,9 +536,12 @@ function goView(v){
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active',s.id==='view-'+v));
   tabs.forEach(b=>b.classList.toggle('cur',b.dataset.v===v));
   window.scrollTo({top:0,behavior:'smooth'});
+  try{history.replaceState(null,'','#'+v)}catch(_){}
   if(v==='video'){vResume();}else{vPause();}
 }
 tabs.forEach(b=>b.onclick=()=>goView(b.dataset.v));
+const h0=location.hash.slice(1);
+if(h0&&h0!=='home'&&document.getElementById('view-'+h0))goView(h0);
 
 /* ---------- tutoriales ---------- */
 document.querySelectorAll('section[id^="view-t"]').forEach(sec=>{
