@@ -1,0 +1,47 @@
+# Clubes TED-Ed CRM — Assets
+
+Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Argentina (Fundación IQT)**, implementado en monday.com. Todos los HTML son autocontenidos (CSS/JS inline, sin build) y se sirven vía GitHub Pages.
+
+**URL base de GitHub Pages:** https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/
+
+## Assets
+
+| Asset | Archivo | URL |
+|---|---|---|
+| 🎓 **Academia CRM** (todo-en-uno: video intro de 12 escenas + 4 tutoriales interactivos) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| ▶️ Video intro standalone (pantalla completa, para proyectar o grabar) | `intro-clubes-ted-ed-crm.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/intro-clubes-ted-ed-crm.html |
+| 📚 Índice de tutoriales standalone | `tutoriales-index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutoriales-index.html |
+| 📍 Tutorial 1 · Básicos de monday en Instituciones | `tutorial-1-basicos-instituciones.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-1-basicos-instituciones.html |
+| 🎫 Tutorial 2 · Tabla Licencias | `tutorial-2-licencias.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-2-licencias.html |
+| 🧑‍🏫 Tutorial 3 · Facilitadores Únicos | `tutorial-3-facilitadores.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-3-facilitadores.html |
+| 💬 Tutorial 4 · Cómo dar feedback | `tutorial-4-feedback.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-4-feedback.html |
+| 🗂️ Copia de respaldo del artifact de la Academia | `academia-crm-artifact.html` | — |
+| ⚙️ Generador Python de tutoriales standalone | `gen_tutoriales.py` | — |
+
+## Diagramas
+
+En [`diagramas/`](diagramas/):
+
+- `bpmn_crm.png` — diagrama BPMN de la arquitectura del CRM (tablas, flujos Make F1–F8, integraciones).
+- `bpmn_crm.svg` — versión vectorial (Canva lo acepta como elemento al subirlo).
+- `arquitectura-crm-bpmn.drawio` — fuente editable: abrilo gratis en [app.diagrams.net](https://app.diagrams.net) o importalo en Lucidchart (Archivo → Importar). Cada caja y flecha es un objeto.
+
+## Cómo embeber en monday.com
+
+1. En el dashboard o Home del workspace: **Agregar widget → "Insertar todo" (Embed Everything)**.
+2. Pegá la URL del asset (por ejemplo la Academia: `https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/`).
+3. Listo — el contenido queda navegable dentro de monday.
+
+## Cómo agregar un asset nuevo
+
+1. Creá el HTML autocontenido (CSS/JS inline; Poppins vía Google Fonts).
+2. Subilo a la raíz (o en su carpeta con `index.html` si tiene varios archivos).
+3. Sumalo a la tabla de este README con su URL de Pages.
+
+### Branding
+
+Tipografía **Poppins**, títulos EN MAYÚSCULA. Paleta oficial: rojo `#dd2e26` (único rojo permitido), índigo `#2a2765`, celeste `#12c2ec`, amarillo `#ecdb14`, teal `#0a8baa`, azul `#345faa`. Voz en español rioplatense (vos/podés).
+
+---
+
+Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com

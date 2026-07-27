@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUTORIALES — CRM CLUBES TED-ED ARGENTINA</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#dd2e26;--indigo:#2a2765;--celeste:#12c2ec;--amarillo:#ecdb14;--teal:#0a8baa;--azul:#345faa}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--indigo);color:#fff;min-height:100vh}
+header{padding:60px 6vw 30px;text-align:center}
+.lockup{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
+.lockup .sq{background:var(--rojo);color:#fff;font-weight:800;border-radius:12px;padding:8px 14px}
+.lockup span{font-weight:600;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+h1{font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.8rem)}
+header p{font-weight:300;margin-top:10px;font-size:1.05rem}
+header p i{color:var(--celeste)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;max-width:1100px;margin:30px auto 20px;padding:0 5vw}
+a.tcard{display:block;background:#fff;color:var(--indigo);border-radius:20px;padding:26px;text-decoration:none;
+  transition:transform .2s, box-shadow .2s;border-top:8px solid var(--c)}
+a.tcard:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.tcard .ic{font-size:2rem}
+.tcard h2{font-weight:700;text-transform:uppercase;font-size:1rem;margin:10px 0 8px;line-height:1.3}
+.tcard p{font-weight:300;font-size:.85rem;line-height:1.55}
+.tcard .go{display:inline-block;margin-top:14px;font-weight:700;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--c)}
+.video{max-width:1100px;margin:0 auto 60px;padding:0 5vw}
+a.vbanner{display:flex;align-items:center;gap:20px;background:var(--rojo);color:#fff;border-radius:20px;
+  padding:24px 30px;text-decoration:none;transition:transform .2s}
+a.vbanner:hover{transform:translateY(-4px)}
+.vbanner .play{font-size:2.4rem}
+.vbanner h2{font-weight:800;text-transform:uppercase;font-size:1.1rem}
+.vbanner p{font-weight:300;font-size:.85rem;margin-top:4px}
+footer{text-align:center;padding:24px;font-weight:300;font-size:.75rem;color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+<header>
+  <div class="lockup"><div class="sq">CLUBES TED-Ed</div><span>Argentina</span></div>
+  <h1>TUTORIALES DEL CRM</h1>
+  <p>Aprendé a usar el sistema a tu ritmo · <i>paso a paso, con práctica y repaso</i></p>
+</header>
+<div class="video">
+  <a class="vbanner" href="intro-clubes-ted-ed-crm.html">
+    <div class="play">▶</div>
+    <div><h2>VIDEO: INTRODUCCIÓN AL CRM</h2>
+    <p>El recorrido completo de la reunión de lanzamiento, animado. 2 minutos.</p></div>
+  </a>
+</div>
+<div class="grid">
+  <a class="tcard" style="--c:var(--rojo)" href="tutorial-1-basicos-instituciones.html">
+    <div class="ic">📍</div><h2>1 · Básicos de monday en Instituciones</h2>
+    <p>Tabla, columnas, ficha, filtros, vistas y permisos. Empezá por acá.</p>
+    <span class="go">Empezar → · 8 min</span></a>
+  <a class="tcard" style="--c:var(--celeste)" href="tutorial-2-licencias.html">
+    <div class="ic">🎫</div><h2>2 · Tabla Licencias</h2>
+    <p>Un club por ciclo académico: columnas, vinculaciones y sincro con Educabot.</p>
+    <span class="go">Empezar → · 6 min</span></a>
+  <a class="tcard" style="--c:var(--amarillo)" href="tutorial-3-facilitadores.html">
+    <div class="ic">🧑‍🏫</div><h2>3 · Facilitadores Únicos</h2>
+    <p>DNI vs idFac, subitems por inscripción y cómo leer la historia de cada persona.</p>
+    <span class="go">Empezar → · 6 min</span></a>
+  <a class="tcard" style="--c:var(--teal)" href="tutorial-4-feedback.html">
+    <div class="ic">💬</div><h2>4 · Cómo dar feedback</h2>
+    <p>El formulario, la tabla de propuestas, votos y plazos hasta la próxima reunión.</p>
+    <span class="go">Empezar → · 4 min</span></a>
+</div>
+<footer>Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</footer>
+</body>
+</html>

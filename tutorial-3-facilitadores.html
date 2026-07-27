@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FACILITADORES ÚNICOS: UNA PERSONA, UNA FILA — TUTORIAL CRM CLUBES TED-ED</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#dd2e26;--indigo:#2a2765;--celeste:#12c2ec;--amarillo:#ecdb14;--teal:#0a8baa;--azul:#345faa}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4f4f8;color:var(--indigo);min-height:100vh}
+header{background:var(--rojo);color:#fff;padding:26px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.lockup{display:flex;align-items:center;gap:12px}
+.lockup .sq{background:#fff;color:var(--rojo);font-weight:800;border-radius:10px;padding:6px 12px;font-size:.9rem}
+.lockup span{font-weight:600;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase}
+header h1{font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,2.6vw,1.7rem);width:100%}
+header .meta{font-weight:300;font-style:italic;font-size:.85rem}
+a.back{color:#fff;font-weight:600;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);border-radius:999px;padding:6px 16px}
+main{max-width:860px;margin:0 auto;padding:34px 5vw 90px}
+#dots{display:flex;gap:8px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
+.dot{width:34px;height:6px;border-radius:3px;background:#d8d8e4;cursor:pointer;transition:.25s}
+.dot.done{background:var(--celeste)} .dot.cur{background:var(--rojo)}
+.card{background:#fff;border-radius:20px;box-shadow:0 10px 34px rgba(42,39,101,.1);padding:34px;display:none;animation:in .45s ease}
+.card.active{display:block}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card .stepno{font-weight:600;font-style:italic;letter-spacing:.25em;font-size:.7rem;color:var(--teal);text-transform:uppercase}
+.card h2{font-weight:700;text-transform:uppercase;font-size:clamp(1.15rem,2.4vw,1.55rem);margin:6px 0 14px}
+.card p{font-weight:300;font-size:1rem;line-height:1.65;margin-bottom:12px}
+.card p b{font-weight:600}
+.action{background:#fdf7d9;border-left:5px solid var(--amarillo);border-radius:0 14px 14px 0;padding:16px 20px;margin:18px 0}
+.action .tag{font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#a08c00}
+.action p{margin:6px 0 0;font-weight:400}
+.tip{background:#e2f7fd;border-left:5px solid var(--celeste);border-radius:0 14px 14px 0;padding:14px 20px;margin:14px 0}
+.tip .tag{font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.tip p{margin:6px 0 0;font-weight:400;font-size:.92rem}
+.warn{background:#fdeceb;border-left:5px solid var(--rojo)}
+.warn .tag{color:var(--rojo)}
+.check{display:flex;align-items:flex-start;gap:12px;padding:10px 0;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--rojo);margin-top:2px}
+.check span{font-weight:400;font-size:.98rem;line-height:1.5}
+nav.paginate{display:flex;justify-content:space-between;margin-top:26px;gap:12px}
+button.nv{background:var(--indigo);color:#fff;border:none;border-radius:999px;padding:12px 30px;font-weight:600;
+  font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}
+button.nv:hover{background:var(--rojo)} button.nv:disabled{opacity:.25;cursor:default}
+.quiz-q{font-weight:600;margin:16px 0 10px}
+.opt{display:block;width:100%;text-align:left;background:#f4f4f8;border:2px solid transparent;border-radius:12px;
+  padding:12px 16px;margin-bottom:8px;font-size:.95rem;cursor:pointer;font-weight:400;transition:.2s}
+.opt:hover{border-color:var(--celeste)}
+.opt.ok{background:#e5f8e9;border-color:#2e9e4f;font-weight:600}
+.opt.bad{background:#fdeceb;border-color:var(--rojo)}
+.done-banner{display:none;background:var(--indigo);color:#fff;border-radius:16px;padding:22px;text-align:center;margin-top:18px}
+.done-banner b{color:var(--amarillo);text-transform:uppercase}
+footer{text-align:center;padding:18px;font-weight:300;font-size:.75rem;color:#8b8ba5}
+</style>
+</head>
+<body>
+<header>
+  <div class="lockup"><div class="sq">CLUBES TED-Ed</div><span>Argentina</span></div>
+  <a class="back" href="tutoriales-index.html">← Todos los tutoriales</a>
+  <h1>FACILITADORES ÚNICOS: UNA PERSONA, UNA FILA</h1>
+  <div class="meta">DNI, idFac y subitems sin misterios · ⏱ 6 min</div>
+</header>
+<main>
+  <div id="dots"></div>
+  <section class="card">
+  <div class="stepno">Paso 1 de 5</div>
+  <h2>El tablero maestro de personas</h2>
+  <p>Facilitadores Únicos tiene <b>4.646 personas</b>: <b>una fila por DNI</b>. Es el maestro de todas las personas que facilitaron clubes.</p><p>Ojo: el <b>idFac no es único por persona</b>. Una misma persona puede tener varios idFac, uno por cada ciclo en que participó. Todos se acumulan en su fila.</p><div class="action"><div class="tag">✋ Hacelo vos</div><p>Buscá un facilitador por nombre o DNI y abrí su ficha.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" disabled>← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 2 de 5</div>
+  <h2>Los subitems: una inscripción por licencia</h2>
+  <p>Dentro de cada persona vas a ver <b>subitems</b>: cada uno es <b>una inscripción a una licencia</b>. Así, la historia completa de la persona vive en un solo lugar.</p><div class="action"><div class="tag">✋ Hacelo vos</div><p>Expandí los subitems de un facilitador con varios ciclos y mirá sus inscripciones año a año.</p></div><div class="tip"><div class="tag">💡 Tip</div><p>¿Un facilitador aparece dos veces? Probablemente sea un DNI mal cargado en origen — reportalo por el formulario.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 3 de 5</div>
+  <h2>Vinculaciones</h2>
+  <label class="check"><input type="checkbox"><span><b>Licencias:</b> los clubes en los que participó.</span></label><label class="check"><input type="checkbox"><span><b>Instituciones:</b> a través de las licencias, las escuelas por las que pasó.</span></label><label class="check"><input type="checkbox"><span><b>Historial de comunicación:</b> emails y actividades registradas con esa persona.</span></label><div class="tip"><div class="tag">💡 Tip</div><p>Para contactar a los facilitadores activos de un hub: filtrá por ciclo 2026 y hub, y usá esa selección.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 4 de 5</div>
+  <h2>Sincro y cuidado de los datos</h2>
+  <p>El flujo <b>F3 de Make</b> alimenta este tablero desde Educabot: crea inscripciones, actualiza el maestro y genera los subitems.</p><div class="tip warn"><div class="tag">⚠️ Importante</div><p>Los campos idFac y DNI son claves de matching. Si ves un dato de identidad mal, no lo edites: reportalo para corregirlo en la fuente.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 5 de 5</div>
+  <h2>Repaso rápido</h2>
+  <div class="quiz-q">Una persona facilitó en 2023 y 2026. En Facilitadores Únicos tiene…</div><button class="opt" data-ok="0" onclick="quiz(this,false)">Dos filas, una por año</button><button class="opt" data-ok="1" onclick="quiz(this,true)">Una fila con dos subitems (una inscripción por licencia)</button><button class="opt" data-ok="0" onclick="quiz(this,false)">Una fila por cada idFac</button><div class="quiz-q">¿El idFac identifica de forma única a una persona?</div><button class="opt" data-ok="0" onclick="quiz(this,false)">Sí, siempre</button><button class="opt" data-ok="1" onclick="quiz(this,true)">No: la clave de persona es el DNI; puede haber varios idFac</button><button class="opt" data-ok="0" onclick="quiz(this,false)">Solo en el ciclo 2026</button><div class="done-banner" data-need="2">🎉 <b>¡Tutorial completado!</b><br>Ya podés aplicarlo en el CRM. Ante dudas, consultá el Diccionario o mandá tu pregunta por el formulario de feedback.</div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" disabled>Fin</button>
+  </nav>
+</section>
+</main>
+<footer>Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</footer>
+<script>
+const cards=[...document.querySelectorAll('.card')],dots=document.getElementById('dots');
+let cur=0;
+cards.forEach((c,k)=>{const d=document.createElement('div');d.className='dot';d.onclick=()=>go(k);dots.appendChild(d)});
+function go(n){cur=Math.max(0,Math.min(cards.length-1,n));
+  cards.forEach((c,k)=>c.classList.toggle('active',k===cur));
+  [...dots.children].forEach((d,k)=>{d.className='dot'+(k<cur?' done':k===cur?' cur':'')});
+  window.scrollTo({top:0,behavior:'smooth'});}
+function quiz(btn,ok){const sib=[...btn.parentElement.querySelectorAll('.opt')];
+  sib.forEach(b=>b.disabled=true);
+  btn.classList.add(ok?'ok':'bad');
+  if(!ok) sib.find(b=>b.dataset.ok==='1').classList.add('ok');
+  const done=btn.closest('.card').querySelector('.done-banner');
+  if(done && [...btn.closest('.card').querySelectorAll('.opt.ok')].length>= +done.dataset.need) done.style.display='block';
+}
+go(0);
+</script>
+</body>
+</html>

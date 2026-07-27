@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BÁSICOS DE MONDAY EN LA TABLA INSTITUCIONES — TUTORIAL CRM CLUBES TED-ED</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#dd2e26;--indigo:#2a2765;--celeste:#12c2ec;--amarillo:#ecdb14;--teal:#0a8baa;--azul:#345faa}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4f4f8;color:var(--indigo);min-height:100vh}
+header{background:var(--rojo);color:#fff;padding:26px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.lockup{display:flex;align-items:center;gap:12px}
+.lockup .sq{background:#fff;color:var(--rojo);font-weight:800;border-radius:10px;padding:6px 12px;font-size:.9rem}
+.lockup span{font-weight:600;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase}
+header h1{font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,2.6vw,1.7rem);width:100%}
+header .meta{font-weight:300;font-style:italic;font-size:.85rem}
+a.back{color:#fff;font-weight:600;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);border-radius:999px;padding:6px 16px}
+main{max-width:860px;margin:0 auto;padding:34px 5vw 90px}
+#dots{display:flex;gap:8px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
+.dot{width:34px;height:6px;border-radius:3px;background:#d8d8e4;cursor:pointer;transition:.25s}
+.dot.done{background:var(--celeste)} .dot.cur{background:var(--rojo)}
+.card{background:#fff;border-radius:20px;box-shadow:0 10px 34px rgba(42,39,101,.1);padding:34px;display:none;animation:in .45s ease}
+.card.active{display:block}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card .stepno{font-weight:600;font-style:italic;letter-spacing:.25em;font-size:.7rem;color:var(--teal);text-transform:uppercase}
+.card h2{font-weight:700;text-transform:uppercase;font-size:clamp(1.15rem,2.4vw,1.55rem);margin:6px 0 14px}
+.card p{font-weight:300;font-size:1rem;line-height:1.65;margin-bottom:12px}
+.card p b{font-weight:600}
+.action{background:#fdf7d9;border-left:5px solid var(--amarillo);border-radius:0 14px 14px 0;padding:16px 20px;margin:18px 0}
+.action .tag{font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#a08c00}
+.action p{margin:6px 0 0;font-weight:400}
+.tip{background:#e2f7fd;border-left:5px solid var(--celeste);border-radius:0 14px 14px 0;padding:14px 20px;margin:14px 0}
+.tip .tag{font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.tip p{margin:6px 0 0;font-weight:400;font-size:.92rem}
+.warn{background:#fdeceb;border-left:5px solid var(--rojo)}
+.warn .tag{color:var(--rojo)}
+.check{display:flex;align-items:flex-start;gap:12px;padding:10px 0;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--rojo);margin-top:2px}
+.check span{font-weight:400;font-size:.98rem;line-height:1.5}
+nav.paginate{display:flex;justify-content:space-between;margin-top:26px;gap:12px}
+button.nv{background:var(--indigo);color:#fff;border:none;border-radius:999px;padding:12px 30px;font-weight:600;
+  font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}
+button.nv:hover{background:var(--rojo)} button.nv:disabled{opacity:.25;cursor:default}
+.quiz-q{font-weight:600;margin:16px 0 10px}
+.opt{display:block;width:100%;text-align:left;background:#f4f4f8;border:2px solid transparent;border-radius:12px;
+  padding:12px 16px;margin-bottom:8px;font-size:.95rem;cursor:pointer;font-weight:400;transition:.2s}
+.opt:hover{border-color:var(--celeste)}
+.opt.ok{background:#e5f8e9;border-color:#2e9e4f;font-weight:600}
+.opt.bad{background:#fdeceb;border-color:var(--rojo)}
+.done-banner{display:none;background:var(--indigo);color:#fff;border-radius:16px;padding:22px;text-align:center;margin-top:18px}
+.done-banner b{color:var(--amarillo);text-transform:uppercase}
+footer{text-align:center;padding:18px;font-weight:300;font-size:.75rem;color:#8b8ba5}
+</style>
+</head>
+<body>
+<header>
+  <div class="lockup"><div class="sq">CLUBES TED-Ed</div><span>Argentina</span></div>
+  <a class="back" href="tutoriales-index.html">← Todos los tutoriales</a>
+  <h1>BÁSICOS DE MONDAY EN LA TABLA INSTITUCIONES</h1>
+  <div class="meta">Tu primera vuelta por el CRM · ⏱ 8 min</div>
+</header>
+<main>
+  <div id="dots"></div>
+  <section class="card">
+  <div class="stepno">Paso 1 de 6</div>
+  <h2>¿Qué es la tabla Instituciones?</h2>
+  <p>Es el corazón del CRM: <b>1.729 escuelas</b> con clubes activos, geocodificadas y organizadas por provincia, hub, año y tipo de gestión.</p><p>Cada <b>fila es un elemento</b> (una institución) y cada <b>columna</b> guarda un tipo de dato: texto, estado, ubicación, personas, vínculos a otras tablas.</p><div class="action"><div class="tag">✋ Hacelo vos</div><p>Entrá a monday con tus credenciales y abrí la tabla <b>Instituciones</b> desde el Home del CRM.</p></div><div class="tip"><div class="tag">💡 Tip</div><p>Si es tu primera vez, integrá tu email desde tu perfil para que tus comunicaciones queden registradas.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" disabled>← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 2 de 6</div>
+  <h2>La ficha de un elemento</h2>
+  <p>Al hacer clic en el nombre de una institución se abre su <b>ficha</b>: todos sus datos, sus actualizaciones, emails y actividades, y sus vínculos con Licencias y Videos.</p><div class="action"><div class="tag">✋ Hacelo vos</div><p>Abrí la ficha de cualquier institución y recorré las pestañas: <b>Actualizaciones</b>, <b>Emails y Actividades</b> y <b>Registro de actividad</b>.</p></div><div class="tip"><div class="tag">💡 Tip</div><p>El historial de versiones guarda todo: si algo se cambió por error, se puede recuperar.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 3 de 6</div>
+  <h2>Filtrar, agrupar, ocultar y buscar</h2>
+  <p>Arriba de la tabla tenés las herramientas para ver <b>solo lo que necesitás</b>:</p><label class="check"><input type="checkbox"><span><b>Buscar:</b> escribí el nombre de una escuela en la lupa.</span></label><label class="check"><input type="checkbox"><span><b>Filtros:</b> filtrá por provincia, hub o año. Probá «Provincia = Córdoba».</span></label><label class="check"><input type="checkbox"><span><b>Agrupar:</b> agrupá por tipo de gestión y mirá cómo se reorganiza la tabla.</span></label><label class="check"><input type="checkbox"><span><b>Ocultar:</b> escondé las columnas que no uses (no se borran, solo se ocultan).</span></label><label class="check"><input type="checkbox"><span><b>Persona:</b> filtrá por responsable con el ícono de personas.</span></label><div class="tip"><div class="tag">💡 Tip</div><p>Marcá cada casilla a medida que lo pruebes en el CRM.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 4 de 6</div>
+  <h2>Las vistas</h2>
+  <p>Una <b>vista</b> es una configuración guardada de filtros, agrupamientos y columnas. La tabla tiene la <b>Tabla Principal</b> y la vista <b>2026 x Hub</b>, y se pueden crear más.</p><div class="action"><div class="tag">✋ Hacelo vos</div><p>Cambiá entre «Tabla Principal» y «2026 x Hub» desde las pestañas superiores y notá la diferencia.</p></div><div class="tip warn"><div class="tag">⚠️ Importante</div><p>Modificar una vista compartida la cambia para todo el equipo. Si querés experimentar, creá tu propia vista y dale tu nombre.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 5 de 6</div>
+  <h2>Permisos: qué podés tocar y qué no</h2>
+  <p>Todos pueden <b>ver, agregar y modificar elementos y fichas</b>, y crear vistas. Lo que queda reservado a admin:</p><label class="check"><input type="checkbox"><span>Crear o modificar <b>columnas</b>.</span></label><label class="check"><input type="checkbox"><span>Hacer <b>importaciones masivas</b>.</span></label><label class="check"><input type="checkbox"><span>Editar campos <b>sincronizados con Educabot</b> (ID Educabot y datos de sync).</span></label><div class="tip warn"><div class="tag">⚠️ Importante</div><p>Educabot es la fuente de verdad: si un dato sincronizado está mal, no lo corrijas a mano — reportalo por el formulario de feedback.</p></div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" >Siguiente →</button>
+  </nav>
+</section><section class="card">
+  <div class="stepno">Paso 6 de 6</div>
+  <h2>Poné a prueba lo aprendido</h2>
+  <div class="quiz-q">¿Qué pasa si edito a mano un campo sincronizado con Educabot?</div><button class="opt" data-ok="0" onclick="quiz(this,false)">Nada, se guarda para siempre</button><button class="opt" data-ok="1" onclick="quiz(this,true)">La sincronización lo puede pisar y puedo romper el flujo — mejor reportarlo</button><button class="opt" data-ok="0" onclick="quiz(this,false)">Se actualiza también en Educabot</button><div class="quiz-q">Quiero ver solo las escuelas de mi hub en 2026. ¿Qué uso?</div><button class="opt" data-ok="0" onclick="quiz(this,false)">Borro las demás filas</button><button class="opt" data-ok="1" onclick="quiz(this,true)">La vista «2026 x Hub» o un filtro por hub</button><button class="opt" data-ok="0" onclick="quiz(this,false)">Pido un Excel exportado</button><div class="done-banner" data-need="2">🎉 <b>¡Tutorial completado!</b><br>Ya podés aplicarlo en el CRM. Ante dudas, consultá el Diccionario o mandá tu pregunta por el formulario de feedback.</div>
+  <nav class="paginate">
+    <button class="nv" onclick="go(cur-1)" >← Anterior</button>
+    <button class="nv" onclick="go(cur+1)" disabled>Fin</button>
+  </nav>
+</section>
+</main>
+<footer>Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</footer>
+<script>
+const cards=[...document.querySelectorAll('.card')],dots=document.getElementById('dots');
+let cur=0;
+cards.forEach((c,k)=>{const d=document.createElement('div');d.className='dot';d.onclick=()=>go(k);dots.appendChild(d)});
+function go(n){cur=Math.max(0,Math.min(cards.length-1,n));
+  cards.forEach((c,k)=>c.classList.toggle('active',k===cur));
+  [...dots.children].forEach((d,k)=>{d.className='dot'+(k<cur?' done':k===cur?' cur':'')});
+  window.scrollTo({top:0,behavior:'smooth'});}
+function quiz(btn,ok){const sib=[...btn.parentElement.querySelectorAll('.opt')];
+  sib.forEach(b=>b.disabled=true);
+  btn.classList.add(ok?'ok':'bad');
+  if(!ok) sib.find(b=>b.dataset.ok==='1').classList.add('ok');
+  const done=btn.closest('.card').querySelector('.done-banner');
+  if(done && [...btn.closest('.card').querySelectorAll('.opt.ok')].length>= +done.dataset.need) done.style.display='block';
+}
+go(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INTRODUCCIÓN AL CRM — CLUBES TED-ED ARGENTINA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#dd2e26; --indigo:#2a2765; --celeste:#12c2ec;
+  --amarillo:#ecdb14; --teal:#0a8baa; --azul:#345faa;
+  --blanco:#ffffff; --negro:#000000;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--indigo);color:var(--blanco);overflow:hidden;height:100vh}
+#stage{position:relative;width:100vw;height:100vh}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:6vh 8vw;opacity:0;visibility:hidden;transition:opacity .8s ease}
+.scene.active{opacity:1;visibility:visible}
+.scene h1{font-weight:800;text-transform:uppercase;font-size:clamp(2rem,5.2vw,4.4rem);line-height:1.05;text-align:center}
+.scene h2{font-weight:700;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.6rem);text-align:center;margin-bottom:2.4vh}
+.scene p.sub{font-weight:300;font-size:clamp(1rem,1.8vw,1.35rem);margin-top:2vh;text-align:center;max-width:820px}
+.kicker{font-weight:600;font-style:italic;letter-spacing:.28em;text-transform:uppercase;
+  font-size:clamp(.7rem,1.2vw,.95rem);color:var(--celeste);margin-bottom:1.6vh;text-align:center}
+.accent-red{color:var(--rojo)} .accent-yellow{color:var(--amarillo)} .accent-cyan{color:var(--celeste)}
+
+/* animaciones de entrada por elemento */
+.active .rise{animation:rise .9s ease both}
+.active .rise.d1{animation-delay:.25s}.active .rise.d2{animation-delay:.5s}
+.active .rise.d3{animation-delay:.75s}.active .rise.d4{animation-delay:1s}
+.active .rise.d5{animation-delay:1.25s}.active .rise.d6{animation-delay:1.5s}
+.active .rise.d7{animation-delay:1.75s}.active .rise.d8{animation-delay:2s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.active .pop{animation:pop .7s cubic-bezier(.2,.9,.3,1.2) both}
+.active .pop.d1{animation-delay:.3s}.active .pop.d2{animation-delay:.6s}.active .pop.d3{animation-delay:.9s}
+.active .pop.d4{animation-delay:1.2s}.active .pop.d5{animation-delay:1.5s}.active .pop.d6{animation-delay:1.8s}
+.active .pop.d7{animation-delay:2.1s}.active .pop.d8{animation-delay:2.4s}
+
+/* portada */
+#s0{background:linear-gradient(140deg,var(--rojo) 0%, #b3221c 100%)}
+.badge{display:inline-flex;flex-direction:column;align-items:center;background:var(--blanco);color:var(--rojo);
+  border-radius:22px;padding:22px 40px;margin-bottom:3.5vh;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.badge .t1{font-weight:800;font-size:clamp(1.5rem,3.2vw,2.6rem);letter-spacing:.02em}
+.badge .t2{font-weight:600;font-size:clamp(.8rem,1.5vw,1.1rem);letter-spacing:.42em;color:var(--indigo);text-transform:uppercase}
+.pill{background:var(--azul);color:var(--blanco);font-weight:600;font-size:clamp(.65rem,1.1vw,.85rem);
+  letter-spacing:.35em;padding:6px 20px;border-radius:999px;margin-top:10px;text-transform:uppercase}
+
+/* doodles decorativos */
+.doodle{position:absolute;opacity:.9;pointer-events:none}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(3deg)}}
+
+/* arquitectura */
+.flow{display:flex;align-items:center;gap:clamp(6px,1.2vw,18px);flex-wrap:wrap;justify-content:center;margin-top:3vh}
+.node{background:var(--blanco);color:var(--indigo);border-radius:16px;padding:14px 18px;text-align:center;
+  min-width:130px;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.node .ic{font-size:1.6rem}
+.node .nm{font-weight:700;text-transform:uppercase;font-size:clamp(.7rem,1vw,.85rem);margin-top:4px}
+.node .ds{font-weight:300;font-size:clamp(.6rem,.85vw,.75rem);color:var(--teal)}
+.arrow{font-size:1.6rem;color:var(--amarillo);font-weight:800}
+.subflow{display:flex;gap:14px;margin-top:3vh;flex-wrap:wrap;justify-content:center}
+.chip{border:2px solid var(--celeste);border-radius:999px;padding:8px 18px;font-weight:600;
+  font-size:clamp(.7rem,1vw,.85rem);text-transform:uppercase;letter-spacing:.06em}
+
+/* grid de tablas */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;width:min(1100px,90vw);margin-top:2.5vh}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px}
+.card .ic{font-size:1.9rem}
+.card h3{font-weight:700;text-transform:uppercase;font-size:clamp(.85rem,1.2vw,1.05rem);margin:8px 0 4px}
+.card .n{font-weight:800;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--amarillo)}
+.card p{font-weight:300;font-size:clamp(.72rem,.95vw,.85rem);line-height:1.45}
+.card.hl{background:var(--rojo);border-color:var(--rojo)}
+.card.hl .n{color:var(--blanco)}
+
+/* lista de pasos / próximos pasos */
+.steps{display:flex;flex-direction:column;gap:14px;margin-top:2.5vh;width:min(760px,88vw)}
+.step{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border-radius:14px;padding:14px 20px}
+.step .num{background:var(--amarillo);color:var(--indigo);font-weight:800;width:38px;height:38px;min-width:38px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.step p{font-weight:400;font-size:clamp(.85rem,1.2vw,1.05rem)}
+.step b{font-weight:700}
+
+/* controles */
+#controls{position:fixed;bottom:0;left:0;right:0;z-index:50;padding:14px 26px;display:flex;align-items:center;gap:16px;
+  background:linear-gradient(transparent,rgba(0,0,0,.45))}
+#bar{flex:1;height:6px;background:rgba(255,255,255,.22);border-radius:3px;overflow:hidden;cursor:pointer}
+#fill{height:100%;width:0;background:var(--amarillo);border-radius:3px;transition:width .2s linear}
+.btn{background:rgba(255,255,255,.14);border:none;color:#fff;width:42px;height:42px;border-radius:50%;
+  font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.btn:hover{background:var(--rojo)}
+#counter{font-weight:600;font-size:.8rem;letter-spacing:.1em;min-width:56px;text-align:center}
+.scene-label{position:fixed;top:20px;left:26px;z-index:50;font-weight:600;font-style:italic;font-size:.75rem;
+  letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.brandmark{position:fixed;top:16px;right:26px;z-index:50;display:flex;align-items:center;gap:10px}
+.brandmark .sq{background:var(--rojo);color:#fff;font-weight:800;border-radius:10px;padding:6px 10px;font-size:.8rem}
+.brandmark span{font-weight:600;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+</style>
+</head>
+<body>
+<div class="scene-label" id="label">INTRODUCCIÓN</div>
+<div class="brandmark"><div class="sq">CLUBES TED-Ed</div><span>ARGENTINA</span></div>
+
+<div id="stage">
+
+<!-- 0 · PORTADA -->
+<section class="scene" id="s0" data-dur="7000" data-label="Bienvenida">
+  <svg class="doodle float" style="top:12%;left:10%" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#ecdb14" stroke-width="1.6" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.5 1 2.5h6c0-1 .3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
+  <svg class="doodle float" style="bottom:16%;right:11%;animation-delay:1.2s" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+  <div class="badge pop"><div class="t1">Clubes TED-Ed</div><div class="t2">Argentina</div></div>
+  <h1 class="rise d1">CONOCÉ NUESTRO<br>NUEVO <span style="color:var(--amarillo)">CRM</span></h1>
+  <p class="sub rise d2">Un recorrido animado por el sistema que ordena toda la información del programa · Fundación IQT</p>
+  <div class="pill rise d3">RECORRIDO · REUNIÓN DE LANZAMIENTO</div>
+</section>
+
+<!-- 1 · QUÉ ES -->
+<section class="scene" data-dur="9000" data-label="Qué es">
+  <div class="kicker rise">¿Qué es esto?</div>
+  <h2 class="rise d1">UN SOLO LUGAR PARA <span class="accent-yellow">TODA LA INFORMACIÓN</span></h2>
+  <p class="sub rise d2">El CRM vive en <b>monday.com</b> y reúne instituciones, licencias, facilitadores, videos y eventos
+  de todos los ciclos académicos, sincronizado automáticamente con Educabot.</p>
+  <div class="subflow">
+    <div class="chip pop d3">📍 1.729 instituciones</div>
+    <div class="chip pop d4">🎫 6.142 licencias</div>
+    <div class="chip pop d5">🧑‍🏫 4.646 facilitadores</div>
+    <div class="chip pop d6">🗓️ 2022 → 2026</div>
+  </div>
+</section>
+
+<!-- 2 · ARQUITECTURA -->
+<section class="scene" data-dur="12000" data-label="Arquitectura">
+  <div class="kicker rise">Arquitectura del sistema</div>
+  <h2 class="rise d1">¿CÓMO FLUYE LA <span class="accent-cyan">INFORMACIÓN</span>?</h2>
+  <div class="flow">
+    <div class="node pop d2"><div class="ic">📝</div><div class="nm">Inscripción</div><div class="ds">Formularios</div></div>
+    <div class="arrow pop d3">→</div>
+    <div class="node pop d3"><div class="ic">🎓</div><div class="nm">Educabot</div><div class="ds">Fuente de verdad</div></div>
+    <div class="arrow pop d4">→</div>
+    <div class="node pop d4"><div class="ic">⚙️</div><div class="nm">Make</div><div class="ds">Sincro F1 · F2 · F3</div></div>
+    <div class="arrow pop d5">→</div>
+    <div class="node pop d5"><div class="ic">🔄</div><div class="nm">Tablas de sincro</div><div class="ds">Upsert automático</div></div>
+    <div class="arrow pop d6">→</div>
+    <div class="node pop d6"><div class="ic">🗂️</div><div class="nm">Tablas core</div><div class="ds">monday CRM</div></div>
+  </div>
+  <div class="subflow">
+    <div class="chip pop d7">🤖 Automatizaciones</div>
+    <div class="chip pop d7">🔌 Integraciones</div>
+    <div class="chip pop d8">🔁 Flujos</div>
+  </div>
+  <p class="sub rise d8" style="font-size:clamp(.8rem,1.2vw,1rem)">⚠️ Educabot manda: los campos sincronizados no se editan a mano.</p>
+</section>
+
+<!-- 3 · HOME -->
+<section class="scene" data-dur="7000" data-label="Recorrido · Home">
+  <div class="kicker rise">Recorrido · Parada 1</div>
+  <h2 class="rise d1">🏠 HOME</h2>
+  <p class="sub rise d2">La puerta de entrada al CRM: accesos directos a cada tabla, dashboards
+  y todo lo que necesitás para arrancar el día.</p>
+  <div class="subflow"><div class="chip pop d3">Vista general</div><div class="chip pop d4">Accesos rápidos</div><div class="chip pop d5">Novedades</div></div>
+</section>
+
+<!-- 4 · INSTITUCIONES -->
+<section class="scene" data-dur="12000" data-label="Recorrido · Instituciones">
+  <div class="kicker rise">Recorrido · Parada 2</div>
+  <h2 class="rise d1">📍 TABLA <span class="accent-red" style="color:var(--amarillo)">INSTITUCIONES</span></h2>
+  <p class="sub rise d2">1.729 escuelas con clubes activos, geocodificadas. Acá también repasamos los básicos de monday:</p>
+  <div class="grid">
+    <div class="card pop d3"><div class="ic">🧱</div><h3>Tabla y columnas</h3><p>Elementos (filas), tipos de columnas y la ficha de cada institución.</p></div>
+    <div class="card pop d4"><div class="ic">🔎</div><h3>Filtrar y buscar</h3><p>Filtros, agrupar, ocultar columnas y búsqueda rápida.</p></div>
+    <div class="card pop d5"><div class="ic">👓</div><h3>Vistas</h3><p>Tabla principal, «2026 x Hub» y las vistas que sumemos.</p></div>
+    <div class="card pop d6"><div class="ic">✉️</div><h3>Comunicación</h3><p>Emails, actividades, tareas y actualizaciones por elemento.</p></div>
+    <div class="card pop d7"><div class="ic">🔐</div><h3>Permisos</h3><p>Todos ven y editan contenido; columnas e importaciones, solo admin.</p></div>
+    <div class="card pop d8"><div class="ic">🕓</div><h3>Historial</h3><p>Versiones y registro de actividad: nada se pierde.</p></div>
+  </div>
+</section>
+
+<!-- 5 · QUÉ ENCUENTRO EN INSTITUCIONES -->
+<section class="scene" data-dur="9000" data-label="Recorrido · Instituciones">
+  <div class="kicker rise">¿Qué datos encuentro acá?</div>
+  <h2 class="rise d1">INSTITUCIONES: <span class="accent-cyan">TU MAPA DEL PROGRAMA</span></h2>
+  <div class="steps">
+    <div class="step rise d2"><div class="num">1</div><p><b>Datos de cada escuela:</b> ubicación, tipo de gestión, contactos.</p></div>
+    <div class="step rise d3"><div class="num">2</div><p><b>Cortes por provincia, año, hub</b> y tipo de gestión.</p></div>
+    <div class="step rise d4"><div class="num">3</div><p><b>Historial de comunicación</b> con los contactos de la institución.</p></div>
+    <div class="step rise d5"><div class="num">4</div><p><b>Licencias y videos</b> vinculados a esa institución.</p></div>
+  </div>
+</section>
+
+<!-- 6 · LICENCIAS Y FACILITADORES -->
+<section class="scene" data-dur="11000" data-label="Recorrido · Licencias y Facilitadores">
+  <div class="kicker rise">Recorrido · Paradas 3 y 4</div>
+  <h2 class="rise d1">🎫 LICENCIAS &nbsp;·&nbsp; 🧑‍🏫 FACILITADORES ÚNICOS</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    <div class="card pop d2"><div class="ic">🎫</div><h3>Licencias</h3><div class="n">6.142</div>
+      <p>Un club por ciclo académico (2022–2026). Vinculadas a su institución y a sus facilitadores. Con automatizaciones de estado.</p></div>
+    <div class="card pop d3"><div class="ic">🧑‍🏫</div><h3>Facilitadores únicos</h3><div class="n">4.646</div>
+      <p>Una fila por persona (DNI). Un mismo DNI puede tener varios idFac en distintos ciclos; cada inscripción es un subitem.</p></div>
+  </div>
+  <p class="sub rise d4">Las vinculaciones entre tablas te dejan saltar de una licencia a su escuela y sus facilitadores con un clic.</p>
+</section>
+
+<!-- 7 · VIDEOS Y EVENTOS -->
+<section class="scene" data-dur="10000" data-label="Recorrido · Videos y Eventos">
+  <div class="kicker rise">Recorrido · Paradas 5, 6 y 7</div>
+  <h2 class="rise d1">🎬 VIDEOS · 🗓️ EVENTOS · ✅ ASISTENCIAS</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div class="card pop d2"><div class="ic">🎬</div><h3>Videos de YouTube</h3><p>Las charlas de los clubes, vinculadas a su institución y ciclo.</p></div>
+    <div class="card pop d3"><div class="ic">🗓️</div><h3>Eventos y capacitaciones</h3><p>Encuentros y formaciones del programa, con su ficha completa.</p></div>
+    <div class="card pop d4"><div class="ic">✅</div><h3>Asistencias a eventos</h3><p>Quién participó de qué, conectado a facilitadores e instituciones.</p></div>
+  </div>
+  <p class="sub rise d5">En cada una: columnas, vinculaciones, ficha y automatizaciones. Misma lógica, distinto contenido.</p>
+</section>
+
+<!-- 8 · REPORTES, DICCIONARIO, GOBERNANZA -->
+<section class="scene" data-dur="10000" data-label="Recorrido · Reportes y Gobernanza">
+  <div class="kicker rise">Recorrido · Paradas finales</div>
+  <h2 class="rise d1">📊 REPORTES · 📖 DICCIONARIO · 🛡️ GOBERNANZA</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div class="card pop d2"><div class="ic">📊</div><h3>Reportes</h3><p>Dashboards con los números del programa, siempre actualizados.</p></div>
+    <div class="card hl pop d3"><div class="ic">📖</div><h3>Diccionario</h3><p>Todas las tablas y columnas, con las reglas de qué va en cada una y qué datos se admiten. Tu referencia ante dudas.</p></div>
+    <div class="card pop d4"><div class="ic">🛡️</div><h3>Gobernanza</h3><p>Matriz RACI, documentación y credenciales de software para nonprofits.</p></div>
+  </div>
+</section>
+
+<!-- 9 · QUÉ MÁS PODEMOS HACER -->
+<section class="scene" data-dur="9000" data-label="Posibilidades">
+  <div class="kicker rise">¿Qué más podemos hacer?</div>
+  <h2 class="rise d1">EL CRM <span class="accent-yellow">RECIÉN EMPIEZA</span></h2>
+  <div class="subflow" style="max-width:900px">
+    <div class="chip pop d2">📋 Formularios</div>
+    <div class="chip pop d3">📧 Secuencias de mail</div>
+    <div class="chip pop d4">📣 Envíos masivos</div>
+    <div class="chip pop d5">📌 Seguimiento de proyectos</div>
+    <div class="chip pop d6">🗒️ Registro de reuniones</div>
+    <div class="chip pop d7">🎓 Cursos monday for Nonprofits</div>
+  </div>
+  <p class="sub rise d8">Más Canva, Claude y Make para nonprofits conectados a monday: bases estandarizadas y una nueva forma de trabajar.</p>
+</section>
+
+<!-- 10 · PRÓXIMOS PASOS -->
+<section class="scene" data-dur="11000" data-label="Próximos pasos">
+  <div class="kicker rise">Próximos pasos</div>
+  <h2 class="rise d1">TU FEEDBACK <span class="accent-cyan">CONSTRUYE EL SISTEMA</span></h2>
+  <div class="steps">
+    <div class="step rise d2"><div class="num">1</div><p><b>Entrá con tus credenciales</b> e integrá tu email y herramientas.</p></div>
+    <div class="step rise d3"><div class="num">2</div><p><b>Completá el formulario de feedback:</b> recibís confirmación y respuesta.</p></div>
+    <div class="step rise d4"><div class="num">3</div><p><b>Mirá la tabla de feedback</b> para votar o comentar lo ya propuesto.</p></div>
+    <div class="step rise d5"><div class="num">4</div><p><b>Dos semanas</b> de preguntas y mejoras rápidas. Toda consulta, por formulario.</p></div>
+    <div class="step rise d6"><div class="num">5</div><p><b>Próxima reunión:</b> semana del 10/8/26.</p></div>
+  </div>
+</section>
+
+<!-- 11 · CIERRE -->
+<section class="scene" id="s11" data-dur="8000" data-label="Cierre" style="background:linear-gradient(140deg,var(--rojo),#b3221c)">
+  <svg class="doodle float" style="top:14%;right:12%" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ecdb14" stroke-width="1.6" stroke-linecap="round"><path d="M5 21l4-8 6-6 4-4-2 6-6 6-6 6zM14 4l6 6"/></svg>
+  <h1 class="rise">IDEAS QUE<br><span style="color:var(--amarillo)">TRANSFORMAN</span></h1>
+  <p class="sub rise d2">Clubes TED-Ed Argentina · Fundación IQT<br>
+  <span style="font-style:italic;font-weight:300">Un CRM hecho entre todos.</span></p>
+  <div class="pill rise d3" style="background:var(--indigo)">GRACIAS · NOS VEMOS LA SEMANA DEL 10/8</div>
+</section>
+
+</div>
+
+<div id="controls">
+  <button class="btn" id="prev" title="Anterior">⏮</button>
+  <button class="btn" id="play" title="Pausar / Reproducir">⏸</button>
+  <button class="btn" id="next" title="Siguiente">⏭</button>
+  <div id="bar"><div id="fill"></div></div>
+  <div id="counter">1 / 12</div>
+  <button class="btn" id="restart" title="Volver a empezar">↺</button>
+</div>
+
+<script>
+const scenes=[...document.querySelectorAll('.scene')];
+const fill=document.getElementById('fill'),counter=document.getElementById('counter'),
+label=document.getElementById('label'),playBtn=document.getElementById('play');
+let i=0,playing=true,t0=0,elapsed=0,raf;
+function show(n){
+  i=(n+scenes.length)%scenes.length;
+  scenes.forEach((s,k)=>s.classList.toggle('active',k===i));
+  label.textContent=scenes[i].dataset.label.toUpperCase();
+  counter.textContent=(i+1)+' / '+scenes.length;
+  elapsed=0;t0=performance.now();
+}
+function tick(now){
+  const dur=+scenes[i].dataset.dur;
+  if(playing){elapsed=now-t0;
+    if(elapsed>=dur){ if(i<scenes.length-1){show(i+1);} else {playing=false;playBtn.textContent='▶';} }
+  }
+  fill.style.width=Math.min(100,(elapsed/dur)*100)+'%';
+  raf=requestAnimationFrame(tick);
+}
+playBtn.onclick=()=>{playing=!playing;playBtn.textContent=playing?'⏸':'▶';
+  if(playing){t0=performance.now()-elapsed; if(i===scenes.length-1&&elapsed>=+scenes[i].dataset.dur)show(0);}};
+document.getElementById('next').onclick=()=>show(i+1);
+document.getElementById('prev').onclick=()=>show(i-1);
+document.getElementById('restart').onclick=()=>{show(0);playing=true;playBtn.textContent='⏸'};
+document.getElementById('bar').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();
+  elapsed=((e.clientX-r.left)/r.width)*+scenes[i].dataset.dur;t0=performance.now()-elapsed;};
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight')show(i+1); else if(e.key==='ArrowLeft')show(i-1);
+  else if(e.key===' '){e.preventDefault();playBtn.click();}});
+show(0);requestAnimationFrame(tick);
+</script>
+</body>
+</html>
