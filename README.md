@@ -8,8 +8,9 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 
 | Asset | Archivo | URL |
 |---|---|---|
-| 🎓 **Academia CRM** (todo-en-uno: bienvenida animada + video intro de 12 escenas + 4 tutoriales interactivos + arquitectura) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
-| 🗺️ Pestaña Arquitectura del sistema (BPMN, tablas, flujos F1–F8) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
+| 🎓 **Intro a Clubes TED-Ed CRM** (todo-en-uno: bienvenida animada + agenda Reunión 27/7 + video intro de 12 escenas + 4 tutoriales interactivos + arquitectura) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| 🗺️ Pestaña Arquitectura del sistema (versión simple + BPMN técnico) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
+| 🗓️ Pestaña Reunión 27/7 (objetivos + agenda con tiempos) — deep-link directo | `index.html#r27` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#r27 |
 | ▶️ Video intro standalone (pantalla completa, para proyectar o grabar) | `intro-clubes-ted-ed-crm.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/intro-clubes-ted-ed-crm.html |
 | 📚 Índice de tutoriales standalone | `tutoriales-index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutoriales-index.html |
 | 📍 Tutorial 1 · Básicos de monday en Instituciones | `tutorial-1-basicos-instituciones.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-1-basicos-instituciones.html |
@@ -23,6 +24,8 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 
 En [`logos/`](logos/):
 
+- `clubes-ted-ed.svg` — lockup Clubes TED-Ed Argentina (full color, para fondos claros; recreación vectorial fiel al brand kit).
+- `clubes-ted-ed-blanco.svg` — lockup negativo blanco (para fondos oscuros o rojos).
 - `ted-logo.svg` — wordmark oficial TED, re-exportado con el rojo oficial del brand kit de Clubes (`#dd2e26`).
 - `hm-systemic-logo.svg` / `.png` — logo de HM Systemic, **Partner Tecnológico de Clubes TED-Ed Argentina** (monocromo `#121212`, fondo transparente; sobre fondos oscuros usar `filter: brightness(0) invert(1)`).
 
