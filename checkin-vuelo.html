@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHECK-IN · VUELO AL NUEVO CRM — CLUBES TED-ED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins','Segoe UI',sans-serif}
+:root{--rojo:#dd2e26;--indigo:#2a2765;--celeste:#12c2ec;--amarillo:#ecdb14;--teal:#0a8baa;--azul:#345faa}
+body{background:linear-gradient(150deg,var(--rojo),#b3221c);min-height:100vh;color:#fff;
+  display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
+.card{width:min(860px,96vw);text-align:center}
+.badge{background:#fff;color:var(--rojo);border-radius:12px;padding:7px 18px;display:inline-block;margin-bottom:8px}
+.badge .t1{font-weight:800;font-size:clamp(.8rem,2vw,1rem)}
+.badge .t2{font-weight:600;font-size:clamp(.42rem,1vw,.5rem);letter-spacing:.4em;color:var(--indigo);text-transform:uppercase}
+h1{font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,3.4vw,1.8rem);line-height:1.15}
+h1 .y{color:var(--amarillo)}
+.sub{font-weight:300;font-style:italic;font-size:clamp(.66rem,1.6vw,.82rem);opacity:.92;margin-top:2px}
+.route{position:relative;margin:16px auto 0;width:min(560px,90vw);text-align:left}
+.rail{position:absolute;left:15px;top:8px;bottom:8px;width:0;border-left:3px dotted rgba(255,255,255,.45)}
+.plane{position:absolute;left:2px;top:0;font-size:1.55rem;z-index:2;transform:rotate(180deg)}
+.run .plane{animation:fly 10.4s linear .4s forwards}
+@keyframes fly{from{top:0}to{top:calc(100% - 32px)}}
+.stop{display:flex;align-items:center;gap:12px;padding:4px 0 4px 40px;position:relative;opacity:0;transform:translateX(-14px)}
+.run .stop{animation:in .45s ease forwards}
+@keyframes in{to{opacity:1;transform:none}}
+.stop .dotp{position:absolute;left:9px;width:15px;height:15px;border-radius:50%;background:var(--amarillo);border:3px solid #fff}
+.stop .em{font-size:1.25rem}
+.stop p{font-weight:400;font-size:clamp(.68rem,1.7vw,.85rem);line-height:1.3;flex:1}
+.stop .t{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;
+  padding:2px 10px;font-weight:700;font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.stop.break{background:var(--amarillo);color:var(--indigo);border-radius:12px;margin:3px 0 3px 34px;padding:6px 10px 6px 8px}
+.stop.break .dotp{display:none}
+.stop.break .t{background:rgba(42,39,101,.12);border-color:rgba(42,39,101,.3)}
+.expect{margin-top:14px;font-weight:300;font-size:clamp(.68rem,1.7vw,.86rem);opacity:0}
+.run .expect{animation:in .5s ease 11.4s forwards}
+.expect b{color:var(--amarillo);font-weight:700}
+.cta{margin-top:10px;background:#fff;color:var(--rojo);border-radius:999px;display:inline-block;
+  padding:10px 26px;font-weight:800;font-size:clamp(.7rem,1.9vw,.9rem);text-transform:uppercase;letter-spacing:.06em;opacity:0}
+.run .cta{animation:pop .5s cubic-bezier(.2,.9,.3,1.3) 12.6s forwards, pulse 1.2s ease 13.2s 2}
+@keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{50%{transform:scale(1.06)}}
+</style>
+</head>
+<body>
+<div class="card run" id="card">
+  <div class="badge"><div class="t1">Clubes TED-Ed</div><div class="t2">Argentina</div></div>
+  <h1>HOY 14:00 · EMBARCAMOS AL <span class="y">NUEVO CRM</span></h1>
+  <div class="sub">Capacitación de lanzamiento · duración del vuelo: 2 h · estas son las escalas</div>
+  <div class="route">
+    <div class="rail"></div>
+    <div class="plane">✈️</div>
+    <div class="stop" style="animation-delay:.5s"><span class="dotp"></span><span class="em">🛫</span><p><b>Despegue:</b> bienvenida y check-in</p><span class="t">14:00</span></div>
+    <div class="stop" style="animation-delay:1.8s"><span class="dotp"></span><span class="em">🗺️</span><p><b>Arquitectura:</b> cómo viaja la información</p><span class="t">15 min</span></div>
+    <div class="stop" style="animation-delay:3.1s"><span class="dotp"></span><span class="em">🧭</span><p><b>Instituciones</b> + básicos de monday</p><span class="t">30 min</span></div>
+    <div class="stop break" style="animation-delay:4.4s"><span class="em">☕</span><p><b>Escala técnica:</b> café y preguntas</p><span class="t">10 min</span></div>
+    <div class="stop" style="animation-delay:5.7s"><span class="dotp"></span><span class="em">🎫</span><p><b>Licencias</b> + Facilitadores Únicos</p><span class="t">20 min</span></div>
+    <div class="stop" style="animation-delay:7s"><span class="dotp"></span><span class="em">🎬</span><p><b>Videos, Eventos</b> y Asistencias</p><span class="t">15 min</span></div>
+    <div class="stop" style="animation-delay:8.3s"><span class="dotp"></span><span class="em">📊</span><p><b>Reportes,</b> Diccionario y Gobernanza</p><span class="t">12 min</span></div>
+    <div class="stop" style="animation-delay:9.6s"><span class="dotp"></span><span class="em">🛬</span><p><b>Aterrizaje:</b> qué más se puede + próximos pasos</p><span class="t">→ 10/8</span></div>
+  </div>
+  <div class="expect">✨ <b>Qué esperar:</b> salís sabiendo moverte por el CRM — buscar, filtrar, comunicar y pedir mejoras.</div>
+  <div class="cta">🎟️ Check-in listo · traé tus credenciales de monday</div>
+</div>
+<script>
+const card=document.getElementById('card');
+setInterval(()=>{card.classList.remove('run');void card.offsetWidth;card.classList.add('run')},15000);
+</script>
+</body>
+</html>
