@@ -19,6 +19,13 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 | 🗂️ Copia de respaldo del artifact de la Academia | `academia-crm-artifact.html` | — |
 | ⚙️ Generador Python de tutoriales standalone | `gen_tutoriales.py` | — |
 
+## Logos
+
+En [`logos/`](logos/):
+
+- `ted-logo.svg` — wordmark oficial TED, re-exportado con el rojo oficial del brand kit de Clubes (`#dd2e26`).
+- `hm-systemic-logo.svg` / `.png` — logo de HM Systemic, **Partner Tecnológico de Clubes TED-Ed Argentina** (monocromo `#121212`, fondo transparente; sobre fondos oscuros usar `filter: brightness(0) invert(1)`).
+
 ## Diagramas
 
 En [`diagramas/`](diagramas/):

@@ -202,8 +202,19 @@ label.ck span{font-weight:400;font-size:.9rem;line-height:1.5}
 .wk-cta .wprimary{background:#fff;color:var(--rojo)} .wk-cta .wprimary:hover{background:var(--amarillo);color:var(--indigo)}
 .wk-cta .wghost{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
 .wk-cta .wghost:hover{background:rgba(255,255,255,.28)}
-@media (prefers-reduced-motion:reduce){.wk-step,.wk-route .chip,.wk-route .arr,.wk-cta{animation-duration:.01s;animation-delay:0s!important}.wk-emoji{animation:none}}
+.wk-partners{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:8px;
+  font-weight:300;font-size:.62rem;letter-spacing:.06em;opacity:0;animation:wkin .5s ease forwards;animation-delay:5s}
+.wk-partners img{height:13px;width:auto;filter:brightness(0) invert(1);opacity:.92}
+.wk-partners img.hmw{height:24px}
+.wk-partners .wsep{width:1px;height:14px;background:rgba(255,255,255,.4)}
+@media (prefers-reduced-motion:reduce){.wk-step,.wk-route .chip,.wk-route .arr,.wk-cta,.wk-partners{animation-duration:.01s;animation-delay:0s!important}.wk-emoji{animation:none}}
 footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8ba5}
+.pstrip{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.pstrip img{height:15px;width:auto;display:block}
+.pstrip img.hm{height:26px}
+.pstrip .psep{width:1px;height:18px;background:#d4d4e0}
+.pstrip .plabel{font-weight:600;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}
+.pstrip span{color:#8b8ba5}
 </style>
 </head>
 <body>
@@ -239,6 +250,13 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <div class="wk-cta">
       <button class="wprimary" onclick="wStart('video')">▶ Empezar por el video</button>
       <button class="wghost" onclick="wStart('home')">Entrar a la academia</button>
+    </div>
+    <div class="wk-partners">
+      <img src="logos/ted-logo.svg" alt="TED">
+      <span>Clubes TED-Ed Argentina · Fundación IQT</span>
+      <span class="wsep"></span>
+      <span>PARTNER TECNOLÓGICO</span>
+      <img src="logos/hm-systemic-logo.svg" alt="HM Systemic" class="hmw">
     </div>
   </div>
 </div>
@@ -606,7 +624,16 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
 </section>
 
 </main>
-<footer>Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</footer>
+<footer>
+  <div class="pstrip">
+    <img src="logos/ted-logo.svg" alt="TED">
+    <span>Clubes TED-Ed Argentina · Fundación IQT</span>
+    <span class="psep"></span>
+    <span class="plabel">Partner Tecnológico</span>
+    <img src="logos/hm-systemic-logo.svg" alt="HM Systemic" class="hm">
+  </div>
+  CRM en monday.com
+</footer>
 
 <script>
 /* ---------- navegación de vistas ---------- */
