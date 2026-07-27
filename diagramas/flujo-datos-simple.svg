@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="780" viewBox="0 0 1600 780">
+  <rect width="1600" height="780" fill="#ffffff"/>
+  <text x="800" y="78" text-anchor="middle" font-family="Poppins, sans-serif" font-size="42" font-weight="800" fill="#2a2765" letter-spacing="2">¿CÓMO VIAJA LA INFORMACIÓN?</text>
+  <text x="800" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="20" font-style="italic" fill="#0a8baa">El recorrido de los datos de Clubes TED-Ed, de la inscripción al equipo</text>
+
+  <!-- Paso 1 -->
+  <g>
+    <rect x="40" y="170" width="260" height="270" rx="18" fill="#ffffff" stroke="#e4e4ee" stroke-width="1.5"/>
+    <rect x="40" y="170" width="260" height="12" rx="6" fill="#dd2e26"/>
+    <text x="170" y="250" text-anchor="middle" font-family="Poppins, sans-serif" font-size="52">📝</text>
+    <text x="170" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#dd2e26" letter-spacing="3">PASO 1</text>
+    <text x="170" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="21" font-weight="700" fill="#2a2765">TE INSCRIBÍS</text>
+    <text x="170" y="350" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">Los formularios de</text>
+    <text x="170" y="372" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">inscripción al programa</text>
+  </g>
+  <text x="318" y="315" text-anchor="middle" font-family="Poppins, sans-serif" font-size="34" font-weight="800" fill="#ecdb14">→</text>
+
+  <!-- Paso 2 -->
+  <g>
+    <rect x="340" y="170" width="260" height="270" rx="18" fill="#ffffff" stroke="#e4e4ee" stroke-width="1.5"/>
+    <rect x="340" y="170" width="260" height="12" rx="6" fill="#345faa"/>
+    <text x="470" y="250" text-anchor="middle" font-family="Poppins, sans-serif" font-size="52">🎓</text>
+    <text x="470" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#345faa" letter-spacing="3">PASO 2</text>
+    <text x="470" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="21" font-weight="700" fill="#2a2765">EDUCABOT LO REGISTRA</text>
+    <text x="470" y="350" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">La fuente oficial</text>
+    <text x="470" y="372" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">de los datos</text>
+  </g>
+  <text x="618" y="315" text-anchor="middle" font-family="Poppins, sans-serif" font-size="34" font-weight="800" fill="#ecdb14">→</text>
+
+  <!-- Paso 3 -->
+  <g>
+    <rect x="640" y="170" width="260" height="270" rx="18" fill="#ffffff" stroke="#e4e4ee" stroke-width="1.5"/>
+    <rect x="640" y="170" width="260" height="12" rx="6" fill="#0a8baa"/>
+    <text x="770" y="250" text-anchor="middle" font-family="Poppins, sans-serif" font-size="52">🔄</text>
+    <text x="770" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#0a8baa" letter-spacing="3">PASO 3</text>
+    <text x="770" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="21" font-weight="700" fill="#2a2765">SE SINCRONIZA SOLO</text>
+    <text x="770" y="350" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">Robots copian todo al CRM</text>
+    <text x="770" y="372" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">sin carga manual</text>
+  </g>
+  <text x="918" y="315" text-anchor="middle" font-family="Poppins, sans-serif" font-size="34" font-weight="800" fill="#ecdb14">→</text>
+
+  <!-- Paso 4 -->
+  <g>
+    <rect x="940" y="170" width="260" height="270" rx="18" fill="#ffffff" stroke="#e4e4ee" stroke-width="1.5"/>
+    <rect x="940" y="170" width="260" height="12" rx="6" fill="#2a2765"/>
+    <text x="1070" y="250" text-anchor="middle" font-family="Poppins, sans-serif" font-size="52">🗂️</text>
+    <text x="1070" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#2a2765" letter-spacing="3">PASO 4</text>
+    <text x="1070" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="21" font-weight="700" fill="#2a2765">VIVE EN EL CRM</text>
+    <text x="1070" y="350" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">Escuelas, clubes, personas,</text>
+    <text x="1070" y="372" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">videos y eventos, conectados</text>
+  </g>
+  <text x="1218" y="315" text-anchor="middle" font-family="Poppins, sans-serif" font-size="34" font-weight="800" fill="#ecdb14">→</text>
+
+  <!-- Paso 5 -->
+  <g>
+    <rect x="1240" y="170" width="260" height="270" rx="18" fill="#ffffff" stroke="#e4e4ee" stroke-width="1.5"/>
+    <rect x="1240" y="170" width="260" height="12" rx="6" fill="#12c2ec"/>
+    <text x="1370" y="250" text-anchor="middle" font-family="Poppins, sans-serif" font-size="52">👥</text>
+    <text x="1370" y="290" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#0a8baa" letter-spacing="3">PASO 5</text>
+    <text x="1370" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="21" font-weight="700" fill="#2a2765">EL EQUIPO LO USA</text>
+    <text x="1370" y="350" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">Buscar, filtrar, comunicar</text>
+    <text x="1370" y="372" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#2a2765">y armar reportes</text>
+  </g>
+
+  <!-- Regla de oro -->
+  <rect x="240" y="500" width="1120" height="110" rx="18" fill="#ecdb14"/>
+  <text x="800" y="546" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" font-weight="700" fill="#2a2765">💡 UNA SOLA REGLA DE ORO</text>
+  <text x="800" y="580" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" fill="#2a2765">Los datos que se sincronizan solos no se corrigen a mano: se avisa por el formulario de feedback</text>
+
+  <text x="800" y="700" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" font-style="italic" fill="#8b8ba5">Clubes TED-Ed Argentina · Fundación IQT · CRM en monday.com</text>
+</svg>

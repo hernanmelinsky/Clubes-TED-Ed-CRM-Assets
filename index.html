@@ -159,6 +159,7 @@ label.ck span{font-weight:400;font-size:.9rem;line-height:1.5}
 .frow p{font-weight:400;font-size:.8rem;line-height:1.45;flex:1}
 .fbadge{border-radius:999px;padding:3px 10px;font-weight:700;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .fbadge.on{background:#e5f8e9;color:#1f7a38}.fbadge.off{background:#fdeceb;color:var(--rojo)}.fbadge.warn{background:#fdf7d9;color:#a08c00}
+.ftime{background:#f4f4f8;border:1px solid #e2e2ec;border-radius:999px;padding:3px 12px;font-weight:700;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--indigo)}
 /* ---------- BIENVENIDA ---------- */
 #welcome{position:fixed;inset:0;z-index:50;background:linear-gradient(150deg,var(--rojo),#b3221c);color:#fff;
   display:flex;align-items:flex-start;justify-content:center;padding:5vh 5vw;overflow-y:auto;
@@ -269,6 +270,7 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
   <div class="sub">Aprendé a usar el CRM a tu ritmo · video + tutoriales interactivos</div>
   <nav id="tabs">
     <button data-v="home" class="cur">🏠 Inicio</button>
+    <button data-v="r27">🗓️ Reunión 27/7</button>
     <button data-v="video">▶ Video intro</button>
     <button data-v="t1">📍 1 · Básicos</button>
     <button data-v="t2">🎫 2 · Licencias</button>
@@ -543,8 +545,18 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
   <div class="dots"></div>
   <div class="card"><div class="stepno">Paso 1 de 4</div><h3>UN SOLO CANAL: EL FORMULARIO</h3>
     <p>Todas las consultas, ideas y reportes de errores entran por el <b>formulario de feedback</b>. Nada se pierde en chats o mails sueltos.</p>
-    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Guardá el link del formulario en favoritos. Al enviarlo, recibís <b>confirmación y respuesta</b>.</p></div>
-    <div class="tip"><div class="tag">💡 Tip</div><p>¿Dato raro (duplicado, campo mal sincronizado)? También va por el formulario — no lo corrijas a mano si es de sync.</p></div></div>
+    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Guardá el link del formulario en favoritos: <a href="https://wkf.ms/4yN733O" target="_blank" rel="noopener"><b>wkf.ms/4yN733O</b></a> (entrá con tu usuario de monday). Al enviarlo, recibís <b>confirmación y respuesta</b>.</p></div>
+    <p style="margin-top:12px"><b>¿Qué tipo de feedback podés mandar?</b></p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+      <span class="chip">❓ Preguntas de funcionamiento</span>
+      <span class="chip">🐞 Reportar error o datos faltantes</span>
+      <span class="chip">📊 Solicitar datos o reportes</span>
+      <span class="chip">🧩 Widget o addon para la Home</span>
+      <span class="chip">🤖 Sugerencia de automatización</span>
+      <span class="chip">💡 Nueva función / Parking de ideas</span>
+      <span class="chip">✏️ Otros</span>
+    </div>
+    <div class="tip" style="margin-top:14px"><div class="tag">💡 Tip</div><p>¿Dato raro (duplicado, campo mal sincronizado)? También va por el formulario — no lo corrijas a mano si es de sync.</p></div></div>
   <div class="card"><div class="stepno">Paso 2 de 4</div><h3>LA TABLA DE FEEDBACK: VOTÁ Y COMENTÁ</h3>
     <p>Todo lo enviado cae en una <b>tabla de feedback</b> visible para el equipo. Antes de proponer algo, revisá si alguien ya lo pidió: podés <b>votarlo o comentarlo</b>.</p>
     <div class="action"><div class="tag">✋ Hacelo vos</div><p>Entrá a la tabla de feedback, buscá una propuesta que te interese y dejá tu voto o comentario.</p></div></div>
@@ -565,12 +577,53 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <div class="doneb" data-need="2">🎉 <b>¡Completaste todos los tutoriales!</b><br>Ya estás en condiciones de usar el CRM. Nos vemos la semana del 10/8.</div></div>
 </section>
 
+<!-- ================= REUNION 27/7 ================= -->
+<section class="view" id="view-r27">
+  <div class="tut-title">🗓️ REUNIÓN DE LANZAMIENTO · 27/7/26</div>
+  <div class="tut-meta">Objetivos y agenda del encuentro · ~2 h · equipo Fundación IQT</div>
+  <div class="acard">
+    <h3>OBJETIVOS DE HOY</h3>
+    <label class="ck"><input type="checkbox"><span>Visualizar la <b>arquitectura del CRM</b> y cómo interactúa con los sistemas actuales.</span></label>
+    <label class="ck"><input type="checkbox"><span>Entender cómo <b>visualizar y hacer las principales acciones</b> del sistema.</span></label>
+    <label class="ck"><input type="checkbox"><span>Refrescar el <b>funcionamiento básico de monday</b> como plataforma.</span></label>
+    <label class="ck"><input type="checkbox"><span>Que quede claro <b>cómo dar feedback</b>.</span></label>
+    <label class="ck"><input type="checkbox"><span>Que todos <b>entren con sus credenciales</b> e integren su email y herramientas.</span></label>
+  </div>
+  <div class="acard">
+    <h3>AGENDA</h3>
+    <div class="frow"><div class="fid">1</div><p>👋 <b>Bienvenida y check-in</b></p><span class="ftime">5 min</span></div>
+    <div class="frow"><div class="fid">2</div><p>🗺️ <b>Arquitectura del sistema:</b> Educabot, sincro, tablas core, Make y flujos</p><span class="ftime">15 min</span></div>
+    <div class="frow"><div class="fid">3</div><p>🧭 <b>Recorrido · parte 1:</b> Home + Instituciones con los básicos de monday</p><span class="ftime">30 min</span></div>
+    <div class="frow"><div class="fid">☕</div><p><b>Break</b> — pausa para café y preguntas sueltas</p><span class="ftime">10 min</span></div>
+    <div class="frow"><div class="fid">4</div><p>🎫 <b>Recorrido · parte 2:</b> Licencias + Facilitadores Únicos</p><span class="ftime">20 min</span></div>
+    <div class="frow"><div class="fid">5</div><p>🎬 <b>Recorrido · parte 3:</b> Videos, Eventos y Asistencias</p><span class="ftime">15 min</span></div>
+    <div class="frow"><div class="fid">6</div><p>📊 <b>Reportes, Diccionario y Gobernanza</b></p><span class="ftime">12 min</span></div>
+    <div class="frow"><div class="fid">7</div><p>✨ <b>¿Qué más podemos hacer?</b> formularios, mails, proyectos</p><span class="ftime">10 min</span></div>
+    <div class="frow"><div class="fid">8</div><p>🚀 <b>Proyecto, feedback y próximos pasos</b></p><span class="ftime">15 min</span></div>
+  </div>
+  <div class="acard">
+    <h3>DESPUÉS DE HOY</h3>
+    <div class="frow"><div class="fid">📝</div><p><b>Formulario de feedback:</b> <a href="https://wkf.ms/4yN733O" target="_blank" rel="noopener"><b>wkf.ms/4yN733O</b></a> (con tu usuario de monday). Tipos: preguntas de funcionamiento, errores o datos faltantes, pedidos de datos/reportes, widgets para la Home, automatizaciones, nuevas funciones y parking de ideas.</p></div>
+    <div class="frow"><div class="fid">💬</div><p><b>Dos semanas</b> de ventana para preguntas y mejoras rápidas por el formulario de feedback — recibís confirmación y respuesta.</p></div>
+    <div class="frow"><div class="fid">🗳️</div><p><b>Tabla de feedback:</b> mirá lo que ya se propuso, votalo o comentalo.</p></div>
+    <div class="frow"><div class="fid">🗓️</div><p><b>Próxima reunión:</b> semana del 10/8/26.</p></div>
+  </div>
+</section>
+
 <!-- ================= ARQUITECTURA ================= -->
 <section class="view" id="view-arq">
   <div class="tut-title">🗺️ ARQUITECTURA DEL SISTEMA</div>
   <div class="tut-meta">Cómo fluye la información de Educabot al CRM · estado al 27/7/26</div>
   <div class="acard">
-    <h3>DIAGRAMA BPMN</h3>
+    <h3>LA VERSIÓN SIMPLE — ¿CÓMO VIAJA LA INFORMACIÓN?</h3>
+    <a href="diagramas/flujo-datos-simple.svg" target="_blank" rel="noopener"><img src="diagramas/flujo-datos-simple.svg" alt="Flujo simplificado: te inscribís → Educabot lo registra → se sincroniza solo → vive en el CRM → el equipo lo usa"></a>
+    <div class="alinks">
+      <a href="diagramas/flujo-datos-simple.svg" target="_blank" rel="noopener">Abrir en grande</a>
+      <a href="diagramas/flujo-datos-simple.svg" download="flujo-datos-simple.svg">Descargar SVG — subilo a Canva como elemento editable</a>
+    </div>
+  </div>
+  <div class="acard">
+    <h3>DIAGRAMA BPMN (VERSIÓN TÉCNICA)</h3>
     <a href="diagramas/bpmn_crm.svg" target="_blank" rel="noopener"><img src="diagramas/bpmn_crm.svg" alt="Diagrama BPMN de la arquitectura del CRM: Educabot → Carga Inicial → Make F1-F8 → Índices CRM → Comunicación"></a>
     <div class="alinks">
       <a href="diagramas/bpmn_crm.svg" target="_blank" rel="noopener">Abrir en grande</a>
