@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INTRO A CLUBES TED-ED CRM — ARGENTINA</title>
+<title>ARCHIVO · REUNIÓN DE LANZAMIENTO 27/7/26 — CLUBES TED-ED CRM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,800&display=swap" rel="stylesheet">
@@ -160,8 +160,57 @@ label.ck span{font-weight:400;font-size:.9rem;line-height:1.5}
 .fbadge{border-radius:999px;padding:3px 10px;font-weight:700;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .fbadge.on{background:#e5f8e9;color:#1f7a38}.fbadge.off{background:#fdeceb;color:var(--rojo)}.fbadge.warn{background:#fdf7d9;color:#a08c00}
 .ftime{background:#f4f4f8;border:1px solid #e2e2ec;border-radius:999px;padding:3px 12px;font-weight:700;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--indigo)}
-.hmword{font-family:'Poppins','Segoe UI',sans-serif;font-weight:600;font-size:.92rem;letter-spacing:.02em}
+/* ---------- BIENVENIDA ---------- */
+#welcome{position:fixed;inset:0;z-index:50;background:linear-gradient(150deg,var(--rojo),#b3221c);color:#fff;
+  display:flex;align-items:flex-start;justify-content:center;padding:5vh 5vw;overflow-y:auto;
+  transition:opacity .5s ease,visibility .5s}
+#welcome.hide{opacity:0;visibility:hidden;pointer-events:none}
+.wk{max-width:640px;width:100%;text-align:center;margin:auto}
+.wk h2{font-weight:800;text-transform:uppercase;font-size:clamp(1.35rem,4vw,2.2rem);line-height:1.12;margin:8px 0 4px}
+.wk .subw{font-weight:300;font-style:italic;font-size:clamp(.78rem,1.6vw,.95rem);opacity:.92}
+.wk-kick{font-weight:600;font-style:italic;letter-spacing:.25em;text-transform:uppercase;
+  font-size:clamp(.55rem,1vw,.66rem);color:var(--amarillo);margin:22px 0 10px}
+.wk-list{display:flex;flex-direction:column;gap:8px;max-width:520px;margin:0 auto;text-align:left}
+.wk-step{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:9px 14px;opacity:0;transform:translateX(-16px);animation:wkin .5s ease forwards}
+.wk-step .wk-emoji{font-size:1.45rem;display:inline-block;line-height:1}
+.wk-sbody{flex:1}
+.wk-n{font-weight:700;font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amarillo)}
+.wk-sbody p{font-weight:400;font-size:clamp(.7rem,1.5vw,.84rem);line-height:1.3;margin-top:1px}
+.wk-time{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;
+  padding:4px 11px;font-weight:700;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.wk-break{background:var(--amarillo);border-color:var(--amarillo);color:var(--indigo)}
+.wk-break .wk-n{color:var(--rojo)}
+.wk-break .wk-time{background:rgba(42,39,101,.12);border-color:rgba(42,39,101,.3)}
+@keyframes wkin{to{opacity:1;transform:none}}
+.em-wave{animation:emwave 2.2s ease-in-out infinite;transform-origin:70% 80%}
+.em-bounce{animation:embounce 1.9s ease-in-out infinite}
+.em-pulse{animation:empulse 2.1s ease-in-out infinite}
+.em-wiggle{animation:emwiggle 2.6s ease-in-out infinite}
+.em-float{animation:emfloat 2.3s ease-in-out infinite}
+@keyframes emwave{0%,55%,100%{transform:rotate(0)}10%{transform:rotate(20deg)}25%{transform:rotate(-10deg)}40%{transform:rotate(14deg)}}
+@keyframes embounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes empulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes emwiggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@keyframes emfloat{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(2px,-5px) rotate(6deg)}}
+.wk-route{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center}
+.wk-route .chip{border-color:rgba(255,255,255,.6);opacity:0;animation:wkin .4s ease forwards}
+.wk-route .arr{opacity:0;animation:wkin .4s ease forwards}
+.wk-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 10px;
+  opacity:0;animation:wkin .5s ease forwards;animation-delay:4.6s}
+.wk-cta button{border:none;border-radius:999px;padding:13px 26px;font-weight:700;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.wk-cta .wprimary{background:#fff;color:var(--rojo)} .wk-cta .wprimary:hover{background:var(--amarillo);color:var(--indigo)}
+.wk-cta .wghost{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.wk-cta .wghost:hover{background:rgba(255,255,255,.28)}
+.wk-partners{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:8px;
+  font-weight:300;font-size:.62rem;letter-spacing:.06em;opacity:0;animation:wkin .5s ease forwards;animation-delay:5s}
+.wk-partners img{width:auto;opacity:.95}
+.wk-partners img.lkw{height:40px}
+.hmword{font-family:'Poppins','Segoe UI',sans-serif;font-weight:600;font-size:.92rem;letter-spacing:.02em;color:#fff}
 .hmword.dark{color:#121212}
+.wk-partners .wsep{width:1px;height:14px;background:rgba(255,255,255,.4)}
+@media (prefers-reduced-motion:reduce){.wk-step,.wk-route .chip,.wk-route .arr,.wk-cta,.wk-partners{animation-duration:.01s;animation-delay:0s!important}.wk-emoji{animation:none}}
 footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8ba5}
 .pstrip{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .pstrip img{width:auto;display:block}
@@ -173,6 +222,47 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
 </style>
 </head>
 <body>
+<div id="welcome">
+  <div class="wk">
+    <div class="badge" style="animation:pp .6s cubic-bezier(.2,.9,.3,1.2) both"><div class="t1">Clubes TED-Ed</div><div class="t2">Argentina</div></div>
+    <h2>BIENVENIDOS AL LANZAMIENTO<br>DEL <span class="y">CRM</span></h2>
+    <div class="subw">Reunión de lanzamiento · 27/7/26 · Fundación IQT</div>
+    <div class="wk-kick">Check-in · La agenda de hoy · ~2 h</div>
+    <div class="wk-list">
+      <div class="wk-step" style="animation-delay:.3s"><div class="wk-emoji em-wave">👋</div><div class="wk-sbody"><span class="wk-n">Paso 1</span><p><b>Bienvenida y check-in</b></p></div><div class="wk-time">5 min</div></div>
+      <div class="wk-step" style="animation-delay:.6s"><div class="wk-emoji em-pulse">🗺️</div><div class="wk-sbody"><span class="wk-n">Paso 2</span><p><b>Arquitectura del sistema:</b> Educabot, sincro, tablas core, Make y flujos</p></div><div class="wk-time">15 min</div></div>
+      <div class="wk-step" style="animation-delay:.9s"><div class="wk-emoji em-wiggle">🧭</div><div class="wk-sbody"><span class="wk-n">Paso 3</span><p><b>Recorrido · parte 1:</b> Home + Instituciones con los básicos de monday</p></div><div class="wk-time">30 min</div></div>
+      <div class="wk-step wk-break" style="animation-delay:1.2s"><div class="wk-emoji em-bounce">☕</div><div class="wk-sbody"><span class="wk-n">Break</span><p><b>Pausa</b> para café y preguntas sueltas</p></div><div class="wk-time">10 min</div></div>
+      <div class="wk-step" style="animation-delay:1.5s"><div class="wk-emoji em-pulse">🎫</div><div class="wk-sbody"><span class="wk-n">Paso 4</span><p><b>Recorrido · parte 2:</b> Licencias + Facilitadores Únicos</p></div><div class="wk-time">20 min</div></div>
+      <div class="wk-step" style="animation-delay:1.8s"><div class="wk-emoji em-bounce">🎬</div><div class="wk-sbody"><span class="wk-n">Paso 5</span><p><b>Recorrido · parte 3:</b> Videos, Eventos y Asistencias</p></div><div class="wk-time">15 min</div></div>
+      <div class="wk-step" style="animation-delay:2.1s"><div class="wk-emoji em-pulse">📊</div><div class="wk-sbody"><span class="wk-n">Paso 6</span><p><b>Reportes, Diccionario y Gobernanza</b></p></div><div class="wk-time">12 min</div></div>
+      <div class="wk-step" style="animation-delay:2.4s"><div class="wk-emoji em-wiggle">✨</div><div class="wk-sbody"><span class="wk-n">Paso 7</span><p><b>¿Qué más podemos hacer?</b> formularios, mails, proyectos</p></div><div class="wk-time">10 min</div></div>
+      <div class="wk-step" style="animation-delay:2.7s"><div class="wk-emoji em-float">🚀</div><div class="wk-sbody"><span class="wk-n">Paso 8</span><p><b>Proyecto, feedback y próximos pasos:</b> nos vemos la semana del 10/8</p></div><div class="wk-time">15 min</div></div>
+    </div>
+    <div class="wk-kick">El recorrido del sistema</div>
+    <div class="wk-route">
+      <div class="chip" style="animation-delay:2.9s">🏠 Home</div><span class="arr" style="animation-delay:3s">→</span>
+      <div class="chip" style="animation-delay:3.1s">📍 Instituciones</div><span class="arr" style="animation-delay:3.2s">→</span>
+      <div class="chip" style="animation-delay:3.3s">🎫 Licencias</div><span class="arr" style="animation-delay:3.4s">→</span>
+      <div class="chip" style="animation-delay:3.5s">🧑‍🏫 Facilitadores</div><span class="arr" style="animation-delay:3.6s">→</span>
+      <div class="chip" style="animation-delay:3.7s">🎬 Videos</div><span class="arr" style="animation-delay:3.8s">→</span>
+      <div class="chip" style="animation-delay:3.9s">🗓️ Eventos</div><span class="arr" style="animation-delay:4s">→</span>
+      <div class="chip" style="animation-delay:4.1s">✅ Asistencias</div><span class="arr" style="animation-delay:4.2s">→</span>
+      <div class="chip" style="animation-delay:4.3s">📊 Reportes</div><span class="arr" style="animation-delay:4.4s">→</span>
+      <div class="chip" style="animation-delay:4.5s">📖 Diccionario</div>
+    </div>
+    <div class="wk-cta">
+      <button class="wprimary" onclick="wStart('video')">▶ Empezar por el video</button>
+      <button class="wghost" onclick="wStart('home')">Explorar el contenido</button>
+    </div>
+    <div class="wk-partners">
+      <span>Clubes TED-Ed Argentina · Fundación IQT</span>
+      <span class="wsep"></span>
+      <span>PARTNER TECNOLÓGICO</span>
+      <span class="hmword">HM Systemic</span>
+    </div>
+  </div>
+</div>
 <header>
   <div class="lockrow">
     <div class="lockup"><div class="sq">CLUBES TED-Ed</div><span>Argentina</span></div>
@@ -182,6 +272,7 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
   <div class="sub">Aprendé a usar el CRM a tu ritmo · video + tutoriales interactivos</div>
   <nav id="tabs">
     <button data-v="home" class="cur">🏠 Inicio</button>
+    <button data-v="r27">🗓️ Reunión 27/7</button>
     <button data-v="video">▶ Video intro</button>
     <button data-v="t1">📍 1 · Básicos</button>
     <button data-v="t2">🎫 2 · Licencias</button>
@@ -196,12 +287,12 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
 <section class="view active" id="view-home">
   <div class="hero">
     <h2>BIENVENIDO AL CRM DE CLUBES TED-ED</h2>
-    <p>Aprendé el sistema a tu ritmo: <i>video, tutoriales y documentación</i>.</p>
+    <p>El recorrido de la reunión de lanzamiento, <i>siempre disponible</i>.</p>
   </div>
   <button class="vbanner" onclick="goView('video')">
     <div class="play">▶</div>
     <div><h3>VIDEO: INTRODUCCIÓN AL CRM</h3>
-    <p>Primeros pasos: el recorrido completo animado en 12 escenas · 2 minutos</p></div>
+    <p>El recorrido completo animado en 12 escenas · 2 minutos</p></div>
   </button>
   <div class="hgrid">
     <button class="hcard" style="--c:var(--rojo)" onclick="goView('t1')"><div class="ic">📍</div>
@@ -488,6 +579,39 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <div class="doneb" data-need="2">🎉 <b>¡Completaste todos los tutoriales!</b><br>Ya estás en condiciones de usar el CRM. Nos vemos la semana del 10/8.</div></div>
 </section>
 
+<!-- ================= REUNION 27/7 ================= -->
+<section class="view" id="view-r27">
+  <div class="tut-title">🗓️ REUNIÓN DE LANZAMIENTO · 27/7/26</div>
+  <div class="tut-meta">Objetivos y agenda del encuentro · ~2 h · equipo Fundación IQT</div>
+  <div class="acard">
+    <h3>OBJETIVOS DE HOY</h3>
+    <label class="ck"><input type="checkbox"><span>Visualizar la <b>arquitectura del CRM</b> y cómo interactúa con los sistemas actuales.</span></label>
+    <label class="ck"><input type="checkbox"><span>Entender cómo <b>visualizar y hacer las principales acciones</b> del sistema.</span></label>
+    <label class="ck"><input type="checkbox"><span>Refrescar el <b>funcionamiento básico de monday</b> como plataforma.</span></label>
+    <label class="ck"><input type="checkbox"><span>Que quede claro <b>cómo dar feedback</b>.</span></label>
+    <label class="ck"><input type="checkbox"><span>Que todos <b>entren con sus credenciales</b> e integren su email y herramientas.</span></label>
+  </div>
+  <div class="acard">
+    <h3>AGENDA</h3>
+    <div class="frow"><div class="fid">1</div><p>👋 <b>Bienvenida y check-in</b></p><span class="ftime">5 min</span></div>
+    <div class="frow"><div class="fid">2</div><p>🗺️ <b>Arquitectura del sistema:</b> Educabot, sincro, tablas core, Make y flujos</p><span class="ftime">15 min</span></div>
+    <div class="frow"><div class="fid">3</div><p>🧭 <b>Recorrido · parte 1:</b> Home + Instituciones con los básicos de monday</p><span class="ftime">30 min</span></div>
+    <div class="frow"><div class="fid">☕</div><p><b>Break</b> — pausa para café y preguntas sueltas</p><span class="ftime">10 min</span></div>
+    <div class="frow"><div class="fid">4</div><p>🎫 <b>Recorrido · parte 2:</b> Licencias + Facilitadores Únicos</p><span class="ftime">20 min</span></div>
+    <div class="frow"><div class="fid">5</div><p>🎬 <b>Recorrido · parte 3:</b> Videos, Eventos y Asistencias</p><span class="ftime">15 min</span></div>
+    <div class="frow"><div class="fid">6</div><p>📊 <b>Reportes, Diccionario y Gobernanza</b></p><span class="ftime">12 min</span></div>
+    <div class="frow"><div class="fid">7</div><p>✨ <b>¿Qué más podemos hacer?</b> formularios, mails, proyectos</p><span class="ftime">10 min</span></div>
+    <div class="frow"><div class="fid">8</div><p>🚀 <b>Proyecto, feedback y próximos pasos</b></p><span class="ftime">15 min</span></div>
+  </div>
+  <div class="acard">
+    <h3>DESPUÉS DE HOY</h3>
+    <div class="frow"><div class="fid">📝</div><p><b>Formulario de feedback:</b> <a href="https://wkf.ms/4yN733O" target="_blank" rel="noopener"><b>wkf.ms/4yN733O</b></a> (con tu usuario de monday). Tipos: preguntas de funcionamiento, errores o datos faltantes, pedidos de datos/reportes, widgets para la Home, automatizaciones, nuevas funciones y parking de ideas.</p></div>
+    <div class="frow"><div class="fid">💬</div><p><b>Dos semanas</b> de ventana para preguntas y mejoras rápidas por el formulario de feedback — recibís confirmación y respuesta.</p></div>
+    <div class="frow"><div class="fid">🗳️</div><p><b>Tabla de feedback:</b> mirá lo que ya se propuso, votalo o comentalo.</p></div>
+    <div class="frow"><div class="fid">🗓️</div><p><b>Próxima reunión:</b> semana del 10/8/26.</p></div>
+  </div>
+</section>
+
 <!-- ================= ARQUITECTURA ================= -->
 <section class="view" id="view-arq">
   <div class="tut-title">🗺️ ARQUITECTURA DEL SISTEMA</div>
@@ -552,14 +676,6 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <div class="frow"><div class="fid">✉️</div><p><b>Mail del CRM.</b> Convocatorias, onboarding y seguimiento a facilitadores, integrado a monday (Gmail).</p></div>
     <div class="frow"><div class="fid">📅</div><p><b>Calendar de Clubes.</b> Agenda de eventos y capacitaciones (GMT-3), conectada a la tabla Eventos.</p></div>
   </div>
-  <div class="acard">
-    <h3>📚 DOCUMENTACIÓN TÉCNICA</h3>
-    <p style="font-weight:300;font-size:.88rem;margin-bottom:10px">Los documentos vivos del sistema (requieren usuario de monday):</p>
-    <div class="frow"><div class="fid">🗺️</div><p><a href="https://fundacioniqt.monday.com/docs/18423905422" target="_blank" rel="noopener"><b>Arquitectura CRM</b></a> — diagrama BPMN, tablas, flujos F1–F8 e integraciones, con estados en vivo.</p></div>
-    <div class="frow"><div class="fid">🔁</div><p><a href="https://fundacioniqt.monday.com/docs/18418195205" target="_blank" rel="noopener"><b>Flujos de sincronización con Educabot</b></a> — diseño detallado de los escenarios de Make.</p></div>
-    <div class="frow"><div class="fid">🧱</div><p><a href="https://fundacioniqt.monday.com/docs/18415285184" target="_blank" rel="noopener"><b>Estructura de tablas y conexiones</b></a> — campos, claves de match y vinculaciones.</p></div>
-    <div class="frow"><div class="fid">🗄️</div><p><a href="reunion-27-7-26.html"><b>Archivo · Reunión de lanzamiento 27/7/26</b></a> — la página original de la reunión, con la bienvenida y la agenda.</p></div>
-  </div>
 </section>
 
 </main>
@@ -584,8 +700,10 @@ function goView(v){
   if(v==='video'){vResume();}else{vPause();}
 }
 tabs.forEach(b=>b.onclick=()=>goView(b.dataset.v));
+const welcome=document.getElementById('welcome');
+function wStart(v){welcome.classList.add('hide');goView(v);}
 const h0=location.hash.slice(1);
-if(h0&&h0!=='home'&&document.getElementById('view-'+h0))goView(h0);
+if(h0&&document.getElementById('view-'+h0)){welcome.style.display='none';if(h0!=='home')goView(h0);}
 
 /* ---------- tutoriales ---------- */
 document.querySelectorAll('section[id^="view-t"]').forEach(sec=>{

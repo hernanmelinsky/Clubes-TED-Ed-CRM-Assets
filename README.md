@@ -8,9 +8,10 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 
 | Asset | Archivo | URL |
 |---|---|---|
-| 🎓 **Intro a Clubes TED-Ed CRM** (todo-en-uno: bienvenida animada + agenda Reunión 27/7 + video intro de 12 escenas + 4 tutoriales interactivos + arquitectura) | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
-| 🗺️ Pestaña Arquitectura del sistema (versión simple + BPMN técnico) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
-| 🗓️ Pestaña Reunión 27/7 (objetivos + agenda con tiempos) — deep-link directo | `index.html#r27` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#r27 |
+| 🎓 **Intro a Clubes TED-Ed CRM** — home de bienvenida permanente: video intro de 12 escenas (primeros pasos) + 4 tutoriales por tabla + arquitectura y documentación técnica | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| 🗺️ Pestaña Arquitectura y documentación técnica (versión simple + BPMN + links a docs) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
+| 🗄️ **Archivo · Reunión de lanzamiento 27/7/26** — la página usada en la reunión (bienvenida animada con agenda + pestaña Reunión 27/7) | `reunion-27-7-26.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/reunion-27-7-26.html |
+| ✈️ Check-in animado de la reunión (recordatorio de 15 s, formato viaje) | `checkin-vuelo.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/checkin-vuelo.html |
 | ▶️ Video intro standalone (pantalla completa, para proyectar o grabar) | `intro-clubes-ted-ed-crm.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/intro-clubes-ted-ed-crm.html |
 | 📚 Índice de tutoriales standalone | `tutoriales-index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutoriales-index.html |
 | 📍 Tutorial 1 · Básicos de monday en Instituciones | `tutorial-1-basicos-instituciones.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/tutorial-1-basicos-instituciones.html |
@@ -43,7 +44,7 @@ En [`diagramas/`](diagramas/):
 2. Pegá la URL del asset (por ejemplo la Academia: `https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/`).
 3. Listo — el contenido queda navegable dentro de monday.
 
-**Deep-links de la Academia:** `#video`, `#t1`…`#t4` y `#arq` abren directo esa pestaña (saltean la ventana de bienvenida). Útil para embeber una sección puntual como widget propio.
+**Deep-links de la Intro:** `#video`, `#t1`…`#t4` y `#arq` abren directo esa pestaña. Útil para embeber una sección puntual como widget propio. En el archivo de la reunión también funcionan (`reunion-27-7-26.html#r27`).
 
 ## Cómo agregar un asset nuevo
 
