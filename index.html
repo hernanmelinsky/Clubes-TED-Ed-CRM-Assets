@@ -187,6 +187,8 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <button data-v="t2">🎫 2 · Licencias</button>
     <button data-v="t3">🧑‍🏫 3 · Facilitadores</button>
     <button data-v="t4">💬 4 · Feedback</button>
+    <button data-v="t5">🎬 5 · Videos</button>
+    <button data-v="t6">🗓️ 6 · Eventos</button>
     <button data-v="arq">🗺️ Arquitectura</button>
   </nav>
 </header>
@@ -212,6 +214,10 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
       <h3>3 · Facilitadores Únicos</h3><p>DNI vs idFac, subitems y la historia de cada persona.</p><span class="go">Empezar → 6 min</span></button>
     <button class="hcard" style="--c:var(--teal)" onclick="goView('t4')"><div class="ic">💬</div>
       <h3>4 · Cómo dar feedback</h3><p>Formulario, tabla de propuestas, votos y plazos.</p><span class="go">Empezar → 4 min</span></button>
+    <button class="hcard" style="--c:var(--indigo)" onclick="goView('t5')"><div class="ic">🎬</div>
+      <h3>5 · Videos de YouTube</h3><p>Las charlas de los clubes, vinculadas a su licencia y escuela.</p><span class="go">Empezar → 4 min</span></button>
+    <button class="hcard" style="--c:var(--rojo)" onclick="goView('t6')"><div class="ic">🗓️</div>
+      <h3>6 · Eventos y Asistencias</h3><p>Dos tablas que trabajan juntas: el evento y quién asistió. El DNI es la clave.</p><span class="go">Empezar → 6 min</span></button>
     <button class="hcard" style="--c:var(--azul)" onclick="goView('arq')"><div class="ic">🗺️</div>
       <h3>Arquitectura del sistema</h3><p>El diagrama BPMN: tablas, flujos de Make e integraciones.</p><span class="go">Ver → 3 min</span></button>
   </div>
@@ -485,7 +491,78 @@ footer{text-align:center;padding:16px;font-weight:300;font-size:.7rem;color:#8b8
     <button class="opt" data-ok="0">La propongo de nuevo igual</button>
     <button class="opt" data-ok="1">La voto o comento en la tabla de feedback</button>
     <button class="opt" data-ok="0">Nada, ya está pedida</button>
-    <div class="doneb" data-need="2">🎉 <b>¡Completaste todos los tutoriales!</b><br>Ya estás en condiciones de usar el CRM. Nos vemos la semana del 10/8.</div></div>
+    <div class="doneb" data-need="2">🎉 <b>¡Tutorial completado!</b><br>Seguí con Videos de YouTube y Eventos.</div></div>
+</section>
+
+<section class="view" id="view-t5">
+  <div class="tut-title">🎬 VIDEOS DE YOUTUBE: EL ARCHIVO DE LAS CHARLAS</div>
+  <div class="tut-meta">Cada charla de los clubes, vinculada a su club y su escuela · ⏱ 4 min</div>
+  <div class="dots"></div>
+  <div class="card"><div class="stepno">Paso 1 de 5</div><h3>¿QUÉ ES LA TABLA VIDEOS DE YOUTUBE?</h3>
+    <p>Es el <b>archivo histórico del programa</b>: una fila por cada charla subida a YouTube (~4.350 videos).</p>
+    <p>Cada video tiene su link, y lo importante: está <b>vinculado a su licencia</b> — el club y ciclo en el que se grabó.</p>
+    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Abrí la tabla <b>Videos de YouTube</b> y reproducí un video desde su link.</p></div></div>
+  <div class="card"><div class="stepno">Paso 2 de 5</div><h3>VINCULACIONES: VIDEO → LICENCIA → ESCUELA</h3>
+    <p>El video no vive suelto: su vínculo con la <b>Licencia</b> te lleva al club, y desde ahí a la <b>institución</b> y al <b>ciclo lectivo</b>.</p>
+    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Desde un video, hacé clic en la licencia vinculada y desde ella saltá a la institución. Tres tablas en dos clics.</p></div>
+    <div class="tip"><div class="tag">💡 Tip</div><p>Al revés también funciona: en la ficha de una institución ves todos sus videos a través de sus licencias.</p></div></div>
+  <div class="card"><div class="stepno">Paso 3 de 5</div><h3>¿QUÉ DATOS ENCUENTRO ACÁ?</h3>
+    <label class="ck"><input type="checkbox"><span>Las charlas de una escuela a través de los años.</span></label>
+    <label class="ck"><input type="checkbox"><span>Todos los videos de un ciclo lectivo.</span></label>
+    <label class="ck"><input type="checkbox"><span>Material real para difusión, redes e informes de impacto.</span></label>
+    <label class="ck"><input type="checkbox"><span>Qué clubes todavía no subieron su charla.</span></label></div>
+  <div class="card"><div class="stepno">Paso 4 de 5</div><h3>SINCRO: LOS VIDEOS ENTRAN SOLOS</h3>
+    <p>Los videos se cargan desde Educabot y los flujos de Make completan el vínculo con su licencia. <b>No se cargan a mano.</b></p>
+    <div class="tip warn"><div class="tag">⚠️ Importante</div><p>¿Un video sin licencia vinculada o con datos raros? No lo corrijas a mano: reportalo por el <a href="https://wkf.ms/4yN733O" target="_blank" rel="noopener">formulario de feedback</a>.</p></div></div>
+  <div class="card"><div class="stepno">Paso 5 de 5</div><h3>REPASO RÁPIDO</h3>
+    <div class="qq">Quiero ver las charlas que grabó una escuela en todos los ciclos. ¿Cómo llego?</div>
+    <button class="opt" data-ok="0">Busco el nombre de la escuela en el título de cada video</button>
+    <button class="opt" data-ok="1">Abro la ficha de la institución y navego por los videos de sus licencias</button>
+    <button class="opt" data-ok="0">Pido un listado por mail</button>
+    <div class="qq">¿Cómo se carga un video nuevo en la tabla?</div>
+    <button class="opt" data-ok="0">Lo agrego a mano con el link de YouTube</button>
+    <button class="opt" data-ok="1">Entra solo por la sincronización — si falta algo, se reporta por el formulario</button>
+    <button class="opt" data-ok="0">Se sube el archivo de video a monday</button>
+    <div class="doneb" data-need="2">🎉 <b>¡Tutorial completado!</b><br>Último paso: Eventos y Asistencias.</div></div>
+</section>
+
+<section class="view" id="view-t6">
+  <div class="tut-title">🗓️ EVENTOS Y ASISTENCIAS: DOS TABLAS QUE TRABAJAN JUNTAS</div>
+  <div class="tut-meta">El encuentro por un lado, quién asistió por el otro — y el DNI como llave · ⏱ 6 min</div>
+  <div class="dots"></div>
+  <div class="card"><div class="stepno">Paso 1 de 6</div><h3>UNA TABLA PARA EL EVENTO, OTRA PARA QUIÉN ASISTIÓ</h3>
+    <p>📅 <b>Eventos y Capacitaciones</b>: una fila por encuentro — tipo (MaTED / Capacitación / Encuentro), modalidad (virtual, presencial o híbrido), fecha, hub y estado.</p>
+    <p>🧾 <b>Asistencias</b>: <b>una fila por persona por evento</b>. Cada asistencia queda <b>conectada a su evento</b> — por eso el evento muestra sus contadores <b># Asistentes (match)</b> y <b># Sin match</b>.</p>
+    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Abrí un evento y mirá su columna <b>Asistentes</b>: ahí están todas las personas que registraron asistencia.</p></div></div>
+  <div class="card"><div class="stepno">Paso 2 de 6</div><h3>EL FLUJO COMPLETO</h3>
+    <p>1️⃣ El encuentro se agenda en el <b>Calendar de Clubes</b> y se refleja en la tabla Eventos.</p>
+    <p>2️⃣ Cada persona que participa se registra como una fila en <b>Asistencias</b>, vinculada a ese evento.</p>
+    <p>3️⃣ El CRM intenta <b>vincular cada asistencia con su Facilitador Único</b> (ya vemos cómo).</p>
+    <div class="tip"><div class="tag">💡 Tip</div><p>Un evento «Completado» con sus asistencias vinculadas es historia viva: horas de capacitación por persona, por hub, por ciclo.</p></div></div>
+  <div class="card"><div class="stepno">Paso 3 de 6</div><h3>LOS FORMULARIOS APUNTAN ACÁ</h3>
+    <p>Los formularios de inscripción o asistencia a un evento <b>se dirigen a la tabla Asistencias</b>: cada respuesta crea una fila nueva con nombre, apellido, email, institución y <b>DNI</b>.</p>
+    <div class="action"><div class="tag">✋ Hacelo vos</div><p>Mirá una fila de Asistencias y detectá a qué <b>evento</b> está vinculada y si tiene su <b>facilitador</b> conectado.</p></div>
+    <div class="tip"><div class="tag">💡 Tip</div><p>¿Van a hacer un formulario para un evento nuevo? Pidan que apunte a Asistencias, con el evento ya identificado.</p></div></div>
+  <div class="card"><div class="stepno">Paso 4 de 6</div><h3>EL DNI ES LA LLAVE QUE VINCULA</h3>
+    <p>Con el <b>DNI</b> de cada asistencia, el CRM busca a la persona en <b>Facilitadores Únicos</b>:</p>
+    <label class="ck"><input type="checkbox"><span>✅ <b>Si existe un Facilitador Único con ese DNI</b> → se vincula automáticamente y su historial de participación queda completo.</span></label>
+    <label class="ck"><input type="checkbox"><span>❌ <b>Si NO existe</b> → la fila queda marcada como <b>error de vinculación</b>: va al grupo «Asistencias Sin Vincular» y aparece en la vista «Error de Vinculación con DNI» para revisión manual.</span></label>
+    <div class="tip warn"><div class="tag">⚠️ Importante</div><p>Por eso el <b>DNI es obligatorio</b> en todo formulario de asistencia: sin DNI (o con un DNI mal escrito) la persona no se conecta con su historia. Pedirlo siempre <b>sin puntos ni espacios</b>.</p></div></div>
+  <div class="card"><div class="stepno">Paso 5 de 6</div><h3>¿QUÉ DATOS ENCUENTRO ACÁ?</h3>
+    <label class="ck"><input type="checkbox"><span>Quién asistió a qué evento, capacitación o MaTED.</span></label>
+    <label class="ck"><input type="checkbox"><span>El historial de participación de una persona (desde su ficha en Facilitadores Únicos).</span></label>
+    <label class="ck"><input type="checkbox"><span>Asistencia y horas por evento, hub o ciclo.</span></label>
+    <label class="ck"><input type="checkbox"><span>Las filas sin match, listas para depurar.</span></label></div>
+  <div class="card"><div class="stepno">Paso 6 de 6</div><h3>REPASO RÁPIDO</h3>
+    <div class="qq">Llega una asistencia con un DNI que no está en Facilitadores Únicos. ¿Qué pasa?</div>
+    <button class="opt" data-ok="0">Se crea un facilitador nuevo automáticamente</button>
+    <button class="opt" data-ok="1">Queda marcada como error de vinculación, sin facilitador, para revisión manual</button>
+    <button class="opt" data-ok="0">Se borra sola</button>
+    <div class="qq">¿A qué tabla se dirige un formulario de asistencia a un evento?</div>
+    <button class="opt" data-ok="0">A Eventos y Capacitaciones</button>
+    <button class="opt" data-ok="1">A Asistencias, con la fila vinculada a su evento</button>
+    <button class="opt" data-ok="0">A Facilitadores Únicos</button>
+    <div class="doneb" data-need="2">🎉 <b>¡Completaste todos los tutoriales!</b><br>Ya podés moverte por todo el CRM. Ante dudas: Diccionario o formulario de feedback.</div></div>
 </section>
 
 <!-- ================= ARQUITECTURA ================= -->

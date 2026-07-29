@@ -8,7 +8,7 @@ Materiales de onboarding y documentación visual del CRM de **Clubes TED-Ed Arge
 
 | Asset | Archivo | URL |
 |---|---|---|
-| 🎓 **Intro a Clubes TED-Ed CRM** — home de bienvenida permanente: video intro de 12 escenas (primeros pasos) + 4 tutoriales por tabla + arquitectura y documentación técnica | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
+| 🎓 **Intro a Clubes TED-Ed CRM** — home de bienvenida permanente: video intro de 12 escenas (primeros pasos) + 6 tutoriales por tabla (Instituciones, Licencias, Facilitadores, Feedback, Videos, Eventos y Asistencias) + arquitectura y documentación técnica | `index.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/ |
 | 🗺️ Pestaña Arquitectura y documentación técnica (versión simple + BPMN + links a docs) — deep-link directo | `index.html#arq` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/#arq |
 | 🗄️ **Archivo · Reunión de lanzamiento 27/7/26** — la página usada en la reunión (bienvenida animada con agenda + pestaña Reunión 27/7) | `reunion-27-7-26.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/reunion-27-7-26.html |
 | ✈️ Check-in animado de la reunión (recordatorio de 15 s, formato viaje) | `checkin-vuelo.html` | https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/checkin-vuelo.html |
@@ -44,7 +44,7 @@ En [`diagramas/`](diagramas/):
 2. Pegá la URL del asset (por ejemplo la Academia: `https://hernanmelinsky.github.io/Clubes-TED-Ed-CRM-Assets/`).
 3. Listo — el contenido queda navegable dentro de monday.
 
-**Deep-links de la Intro:** `#video`, `#t1`…`#t4` y `#arq` abren directo esa pestaña. Útil para embeber una sección puntual como widget propio. En el archivo de la reunión también funcionan (`reunion-27-7-26.html#r27`).
+**Deep-links de la Intro:** `#video`, `#t1`…`#t6` y `#arq` abren directo esa pestaña. Útil para embeber una sección puntual como widget propio. En el archivo de la reunión también funcionan (`reunion-27-7-26.html#r27`).
 
 ## Cómo agregar un asset nuevo
 
